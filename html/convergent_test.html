@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convergence Tests for Series</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <style>
+        body {
+            font-size: 25px;
+        }
+    </style>
+</head>
+-->
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Convergence Tests for Series</h1>
+
+    <h2>1. The n-th Term Test for Divergence</h2>
+    <p>
+      If \( \lim_{n \to \infty} a_n \neq 0 \), then the series \( \sum a_n \)
+      diverges.
+    </p>
+    <p>
+      <strong>Example:</strong> Consider the series \( \sum_{n=1}^{\infty}
+      \frac{1}{n} \). Since \( \lim_{n \to \infty} \frac{1}{n} = 0 \), the n-th
+      term test does not conclude divergence.
+    </p>
+
+    <h2>2. The Geometric Series Test</h2>
+    <p>
+      A geometric series \( \sum_{n=0}^{\infty} ar^n \) converges if \( |r| < 1
+      \) and diverges if \( |r| \geq 1 \).
+    </p>
+    <p>
+      <strong>Example:</strong> Consider the series \( \sum_{n=0}^{\infty}
+      \left(\frac{1}{2}\right)^n \). Since \( \left| \frac{1}{2} \right| < 1 \),
+      the series converges.
+    </p>
+
+    <h2>3. The p-Series Test</h2>
+    <p>
+      A p-series \( \sum_{n=1}^{\infty} \frac{1}{n^p} \) converges if \( p > 1
+      \) and diverges if \( p \leq 1 \).
+    </p>
+    <p>
+      <strong>Example:</strong> Consider the series \( \sum_{n=1}^{\infty}
+      \frac{1}{n^2} \). Since \( p = 2 > 1 \), the series converges.
+    </p>
+
+    <!-- -->
+    <details>
+      <summary>Proof</summary>
+      <h1>Proof of the p-Series Test</h1>
+      <p>The p-series is given by \( \sum_{n=1}^{\infty} \frac{1}{n^p} \).</p>
+
+      <h2>Case 1: \( p > 1 \)</h2>
+      <p>
+        To prove convergence for \( p > 1 \), we use the integral test. Consider
+        the function \( f(x) = \frac{1}{x^p} \). This function is positive,
+        continuous, and decreasing for \( x \geq 1 \).
+      </p>
+      <p>We need to evaluate the improper integral:</p>
+      <p>\[ \int_{1}^{\infty} \frac{1}{x^p} \, dx \]</p>
+      <p>
+        Let's find the antiderivative of \( \frac{1}{x^p} \) for \( p \neq 1 \):
+      </p>
+      <p>
+        \[ \int \frac{1}{x^p} \, dx = \int x^{-p} \, dx = \frac{x^{-p+1}}{-p+1}
+        + C = \frac{x^{1-p}}{1-p} + C \]
+      </p>
+      <p>Now, evaluate the improper integral:</p>
+      <p>
+        \[ \int_{1}^{\infty} \frac{1}{x^p} \, dx = \lim_{b \to \infty}
+        \int_{1}^{b} \frac{1}{x^p} \, dx = \lim_{b \to \infty} \left[
+        \frac{x^{1-p}}{1-p} \right]_{1}^{b} \]
+      </p>
+      <p>Compute the definite integral:</p>
+      <p>
+        \[ = \lim_{b \to \infty} \left( \frac{b^{1-p}}{1-p} -
+        \frac{1^{1-p}}{1-p} \right) = \lim_{b \to \infty} \left(
+        \frac{b^{1-p}}{1-p} - \frac{1}{1-p} \right) \]
+      </p>
+      <p>
+        Since \( p > 1 \), we have \( 1 - p < 0 \), which means \( b^{1-p} \to 0
+        \) as \( b \to \infty \):
+      </p>
+      <p>\[ = \left( 0 - \frac{1}{1-p} \right) = \frac{1}{p-1} \]</p>
+      <p>
+        Thus, the integral converges and so does the p-series \(
+        \sum_{n=1}^{\infty} \frac{1}{n^p} \) for \( p > 1 \).
+      </p>
+
+      <h2>Case 2: \( p \leq 1 \)</h2>
+      <p>
+        To prove divergence for \( p \leq 1 \), we again use the integral test.
+        Consider the function \( f(x) = \frac{1}{x^p} \) with \( p \leq 1 \). We
+        need to evaluate the improper integral:
+      </p>
+      <p>\[ \int_{1}^{\infty} \frac{1}{x^p} \, dx \]</p>
+      <p>
+        We already have the antiderivative \( \frac{x^{1-p}}{1-p} \). Now,
+        evaluate the improper integral for \( p = 1 \):
+      </p>
+      <p>
+        \[ \int_{1}^{\infty} \frac{1}{x} \, dx = \lim_{b \to \infty}
+        \int_{1}^{b} \frac{1}{x} \, dx = \lim_{b \to \infty} [\ln x]_{1}^{b} =
+        \lim_{b \to \infty} (\ln b - \ln 1) = \lim_{b \to \infty} \ln b = \infty
+        \]
+      </p>
+      <p>
+        Thus, the integral diverges for \( p = 1 \), so the series \(
+        \sum_{n=1}^{\infty} \frac{1}{n} \) diverges.
+      </p>
+
+      <p>For \( p < 1 \), the evaluation is:</p>
+      <p>
+        \[ \int_{1}^{\infty} \frac{1}{x^p} \, dx = \lim_{b \to \infty} \left[
+        \frac{x^{1-p}}{1-p} \right]_{1}^{b} = \lim_{b \to \infty} \left(
+        \frac{b^{1-p}}{1-p} - \frac{1}{1-p} \right) \]
+      </p>
+      <p>
+        Since \( p < 1 \), we have \( 1 - p > 0 \), which means \( b^{1-p} \to
+        \infty \) as \( b \to \infty \):
+      </p>
+      <p>\[ = \infty \]</p>
+      <p>
+        Thus, the integral diverges and so does the p-series \(
+        \sum_{n=1}^{\infty} \frac{1}{n^p} \) for \( p \leq 1 \).
+      </p>
+    </details>
+    <!-- -->
+
+    <h2>4. The Integral Test</h2>
+    <p>
+      If \( f(x) \) is a positive, continuous, and decreasing function for \( x
+      \geq 1 \), then the series \( \sum_{n=1}^{\infty} a_n \) and the integral
+      \( \int_{1}^{\infty} f(x) \, dx \) either both converge or both diverge.
+    </p>
+    <p>
+      <strong>Example:</strong> Consider the series \( \sum_{n=1}^{\infty}
+      \frac{1}{n^2} \). The corresponding integral is \( \int_{1}^{\infty}
+      \frac{1}{x^2} \, dx = 1 \), which converges, so the series converges.
+    </p>
+
+    <h2>5. The Comparison Test</h2>
+    <p>
+      Given two series \( \sum a_n \) and \( \sum b_n \) with \( 0 \leq a_n \leq
+      b_n \) for all \( n \), if \( \sum b_n \) converges, then \( \sum a_n \)
+      converges.
+    </p>
+    <p>
+      <strong>Example:</strong> Consider \( a_n = \frac{1}{n^2+1} \) and \( b_n
+      = \frac{1}{n^2} \). Since \( \sum \frac{1}{n^2} \) converges and \(
+      \frac{1}{n^2+1} \leq \frac{1}{n^2} \), the series \( \sum \frac{1}{n^2+1}
+      \) converges by comparison.
+    </p>
+
+    <h2>6. The Limit Comparison Test</h2>
+    <p>
+      Given two series \( \sum a_n \) and \( \sum b_n \) with \( a_n > 0 \) and
+      \( b_n > 0 \) for all \( n \), if \( \lim_{n \to \infty} \frac{a_n}{b_n} =
+      c \) where \( c \) is a positive finite number, then \( \sum a_n \)
+      converges if and only if \( \sum b_n \) converges.
+    </p>
+    <p>
+      <strong>Example:</strong> Consider \( a_n = \frac{n+1}{n^2} \) and \( b_n
+      = \frac{1}{n} \). Since \( \lim_{n \to \infty} \frac{a_n}{b_n} = \lim_{n
+      \to \infty} \frac{n+1}{n^2} \cdot n = \lim_{n \to \infty} \frac{n+1}{n} =
+      1 \), and \( \sum \frac{1}{n} \) diverges, so does \( \sum \frac{n+1}{n^2}
+      \).
+    </p>
+
+    <h2>7. The Ratio Test</h2>
+    <p>
+      For a series \( \sum a_n \), if \( \lim_{n \to \infty} \left|
+      \frac{a_{n+1}}{a_n} \right| = L \), then the series converges if \( L < 1
+      \) and diverges if \( L > 1 \). If \( L = 1 \), the test is inconclusive.
+    </p>
+    <p>
+      <strong>Example:</strong> Consider the series \( \sum_{n=1}^{\infty}
+      \frac{1}{n!} \). The ratio test gives \( \lim_{n \to \infty} \left|
+      \frac{\frac{1}{(n+1)!}}{\frac{1}{n!}} \right| = \lim_{n \to \infty}
+      \frac{1}{n+1} = 0 \), so the series converges.
+    </p>
+
+    <h2>8. The Root Test</h2>
+    <p>
+      For a series \( \sum a_n \), if \( \lim_{n \to \infty} \sqrt[n]{|a_n|} = L
+      \), then the series converges if \( L < 1 \) and diverges if \( L > 1 \).
+      If \( L = 1 \), the test is inconclusive.
+    </p>
+    <p>
+      <strong>Example:</strong> Consider the series \( \sum_{n=1}^{\infty}
+      \left( \frac{1}{2^n} \right) \). The root test gives \( \lim_{n \to
+      \infty} \sqrt[n]{\left| \frac{1}{2^n} \right|} = \frac{1}{2} < 1 \), so
+      the series converges.
+    </p>
+  </body>
+</html>

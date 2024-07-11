@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Sequence in Mathematics</h2>
+    <p>
+      A <b>sequence</b> is an ordered list of numbers that often follows a
+      specific pattern or rule. Each number in the sequence is called a term. A
+      sequence can be finite or infinite.
+    </p>
+
+    <h3>Definition</h3>
+    <p>
+      A sequence can be defined as a function from the set of natural numbers
+      (or a subset of the natural numbers) to the real numbers.
+    </p>
+    <p>
+      Formally, a sequence is a function \(a: \mathbb{N} \rightarrow
+      \mathbb{R}\), where \(a(n)\) is the \(n\)-th term of the sequence. We
+      usually denote a sequence by \(\{a_n\}\).
+    </p>
+
+    <h3>Properties of Sequences</h3>
+    <ul>
+      <li>
+        <b>Convergence:</b> A sequence \(\{a_n\}\) is said to converge to a
+        limit \(L\) if for every \(\epsilon > 0\), there exists a positive
+        integer \(N\) such that \(|a_n - L| < \epsilon\) for all \(n > N\).
+      </li>
+      <li>
+        <b>Divergence:</b> If a sequence does not converge, it is said to
+        diverge.
+      </li>
+      <li>
+        <b>Monotonicity:</b> A sequence is monotonic if it is either increasing
+        or decreasing.
+      </li>
+      <li>
+        <b>Boundedness:</b> A sequence is bounded if there exists a real number
+        \(M\) such that \(|a_n| \leq M\) for all \(n \in \mathbb{N}\).
+      </li>
+    </ul>
+
+    <h3>Example and Proof of Convergence</h3>
+    <p>
+      Consider the sequence \(\left\{ \frac{1}{n} \right\}\). We will prove that
+      it converges to 0.
+    </p>
+    <p>Proof:</p>
+    <p>
+      Let \(\epsilon > 0\) be given. We need to find a positive integer \(N\)
+      such that for all \(n > N\), \(\left| \frac{1}{n} - 0 \right| <
+      \epsilon\).
+    </p>
+    <p>
+      Since \(\left| \frac{1}{n} - 0 \right| = \frac{1}{n}\), we need
+      \(\frac{1}{n} < \epsilon\).
+    </p>
+    <p>
+      Taking the reciprocal, we get \(n > \frac{1}{\epsilon}\). Let \(N =
+      \left\lceil \frac{1}{\epsilon} \right\rceil \geq \frac{1}{\epsilon} \) .
+    </p>
+    <p>Then for all \(n > N\), \(\frac{1}{n} < \frac{1}{N} \leq \epsilon\).</p>
+    <p>Thus, \(\left\{ \frac{1}{n} \right\}\) converges to 0.</p>
+  </body>
+</html>

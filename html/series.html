@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Definition of a Series</h2>
+
+    <p>
+      A <b>series</b> in mathematics is the sum of the terms of a sequence.
+      Given a sequence of numbers \(a_1, a_2, a_3, \ldots\), the corresponding
+      series is the expression:
+    </p>
+
+    <p>\[ S = a_1 + a_2 + a_3 + \cdots \]</p>
+
+    <p>
+      The <b>partial sum</b> of the first \(n\) terms of the series is denoted
+      by \(S_n\) and is given by:
+    </p>
+
+    <p>\[ S_n = \sum_{k=1}^n a_k = a_1 + a_2 + a_3 + \cdots + a_n \]</p>
+
+    <p>
+      If the sequence of partial sums \(\{S_n\}\) converges to a limit \(S\) as
+      \(n\) approaches infinity, the series is said to <b>converge</b>, and
+      \(S\) is called the <b>sum</b> of the series. If the sequence of partial
+      sums does not converge, the series is said to <b>diverge</b>.
+    </p>
+
+    <h2>Important Properties</h2>
+
+    <h3>1. Linearity</h3>
+
+    <p>
+      If \(\sum a_n\) and \(\sum b_n\) are convergent series, then for any
+      constants \(c\) and \(d\), the series \(\sum (ca_n + db_n)\) is also
+      convergent, and
+    </p>
+
+    <p>\[ \sum (ca_n + db_n) = c \sum a_n + d \sum b_n \]</p>
+
+    <h3>2. Comparison Test</h3>
+
+    <p>
+      If \(0 \leq a_n \leq b_n\) for all \(n\) and \(\sum b_n\) converges, then
+      \(\sum a_n\) also converges. Conversely, if \(\sum a_n\) diverges, then
+      \(\sum b_n\) also diverges.
+    </p>
+
+    <h3>3. Ratio Test</h3>
+
+    <p>Consider a series \(\sum a_n\) with positive terms. Define:</p>
+
+    <p>\[ L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| \]</p>
+
+    <p>
+      - If \(L < 1\), the series converges.<br />
+      - If \(L > 1\) or \(L = \infty\), the series diverges.<br />
+      - If \(L = 1\), the test is inconclusive.
+    </p>
+
+    <h2>Proof of Convergence for Geometric Series</h2>
+
+    <p>A geometric series is a series of the form:</p>
+
+    <p>\[ \sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + ar^3 + \cdots \]</p>
+
+    <p>where \(a\) is a constant and \(r\) is the common ratio.</p>
+
+    <p>
+      <b>Proof:</b> To find the sum of the first \(n+1\) terms, consider the
+      partial sum \(S_{n+1}\):
+    </p>
+
+    <p>\[ S_{n+1} = a + ar + ar^2 + \cdots + ar^n \]</p>
+
+    <p>Multiply both sides of the equation by \(r\):</p>
+
+    <p>\[ rS_{n+1} = ar + ar^2 + ar^3 + \cdots + ar^{n+1} \]</p>
+
+    <p>Subtract the second equation from the first:</p>
+
+    <p>\[ S_{n+1} - rS_{n+1} = a - ar^{n+1} \]</p>
+
+    <p>Factor out \(S_{n+1}\) on the left side:</p>
+
+    <p>\[ S_{n+1}(1 - r) = a(1 - r^{n+1}) \]</p>
+
+    <p>Solving for \(S_{n+1}\), we get:</p>
+
+    <p>\[ S_{n+1} = \frac{a(1 - r^{n+1})}{1 - r} \]</p>
+
+    <p>
+      If \(|r| < 1\), then as \(n \to \infty\), \(r^{n+1} \to 0\). Thus, the sum
+      \(S\) of the infinite geometric series is:
+    </p>
+
+    <p>
+      \[ S = \lim_{n \to \infty} S_{n+1} = \frac{a(1 - 0)}{1 - r} = \frac{a}{1 -
+      r} \]
+    </p>
+  </body>
+</html>
