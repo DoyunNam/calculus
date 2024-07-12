@@ -81,7 +81,7 @@
       \frac{1}{n^2} \). Since \( p = 2 > 1 \), the series converges.
     </p>
 
-    <!-- -->
+    
     <details>
       <summary>Proof</summary>
       <h1>Proof of the p-Series Test</h1>
@@ -162,7 +162,7 @@
         \sum_{n=1}^{\infty} \frac{1}{n^p} \) for \( p \leq 1 \).
       </p>
     </details>
-    <!-- -->
+  
 
     <h2>4. The Integral Test</h2>
     <p>
@@ -229,5 +229,51 @@
       \infty} \sqrt[n]{\left| \frac{1}{2^n} \right|} = \frac{1}{2} < 1 \), so
       the series converges.
     </p>
+
+    <h2>9. Root Test with Limsup and Proof</h1>
+    <p>
+        Let \( \{a_n\} \) be a sequence of real numbers. The root test is used to determine the convergence or divergence of the series \( \sum_{n=1}^{\infty} a_n \). The test is based on the n-th root of the absolute value of the terms of the sequence.
+    </p>
+    <p>
+        Define the n-th root test as follows:
+    </p>
+    <p>
+        Let \( L = \limsup_{n \to \infty} \sqrt[n]{|a_n|} \).
+    </p>
+    <p>
+        Then:
+        <ul>
+            <li>If \( L < 1 \), the series \( \sum_{n=1}^{\infty} a_n \) converges absolutely.</li>
+            <li>If \( L > 1 \), the series \( \sum_{n=1}^{\infty} a_n \) diverges.</li>
+            <li>If \( L = 1 \), the root test is inconclusive.</li>
+        </ul>
+    </p>
+
+    <details>
+      <summary>Proof</summary>
+    <!-- <h2>Proof</h2> -->
+    <p>
+        Let \( L = \limsup_{n \to \infty} \sqrt[n]{|a_n|} \).
+    </p>
+    <h3>Case 1: \( L < 1 \)</h3>
+    <p>
+        Since \( L < 1 \), there exists \( 0 < r < 1 \) such that \( L < r < 1 \). By the definition of \(\limsup\), there exists an integer \( N \) such that for all \( n \geq N \), \( \sqrt[n]{|a_n|} < r \). Therefore, \( |a_n| < r^n \) for all \( n \geq N \).
+    </p>
+    <p>
+        Consider the tail of the series \( \sum_{n=N}^{\infty} |a_n| \). Since \( |a_n| < r^n \) for all \( n \geq N \), we can compare it to the geometric series \( \sum_{n=N}^{\infty} r^n \).
+    </p>
+    <p>
+        The geometric series \( \sum_{n=N}^{\infty} r^n \) converges because \( 0 < r < 1 \). Hence, by the comparison test, the series \( \sum_{n=N}^{\infty} |a_n| \) converges. Adding the finite number of terms \( |a_1|, |a_2|, \ldots, |a_{N-1}| \), we conclude that the series \( \sum_{n=1}^{\infty} |a_n| \) converges absolutely.
+    </p>
+    <h3>Case 2: \( L > 1 \)</h3>
+    <p>
+        Since \( L > 1 \), there exists \( r > 1 \) such that \( r < L \). By a property of \(\limsup\), there exists a subsequence of \( \{\sqrt[n]{|a_n|} \} \) whose limit is \( L \). Thus for some tail of \( |a_{n_k}| \) is greater than \( 1 \).
+        Thus, the series \( \sum_{n=1}^{\infty} a_n \) diverges.
+    </p>
+    <h3>Case 3: \( L = 1 \)</h3>
+    <p>
+        If \( L = 1 \), the root test is inconclusive. The series may converge or diverge, and further analysis or a different convergence test is needed.
+    </p>
+  </details>
   </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <style>
+        body {
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Radius of Convergence</h1>
+    <p>
+        The radius of convergence of a power series 
+        \[
+        \sum_{n=0}^{\infty} a_n (z - z_0)^n
+        \]
+        is the distance from the center \( z_0 \) to the boundary within which the series converges. Formally, it is defined as the non-negative number \( R \) such that the series converges when \( |z - z_0| < R \) and diverges when \( |z - z_0| > R \).
+    </p>
+    <h2>Finding the Radius of Convergence</h2>
+<p>
+    The radius of convergence can be found using the formula
+    \[    \frac{1}{R} = \limsup_{n \to \infty} \sqrt[n]{|a_n|}
+    \]
+    or equivalently
+    \[    R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}}.
+    \]
+</p>
+
+<h2>Proof</h2>
+<p>
+    Consider the power series 
+    \[    \sum_{n=0}^{\infty} a_n (z - z_0)^n.    \]
+    We use the ratio test to determine the convergence of the series. Define \( L \) as
+    \[    L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|.    \]
+</p>
+
+<p>
+    The ratio test states that the series converges if \( L < 1 \) and diverges if \( L > 1 \). If \( L = 1 \), the test is inconclusive. To find the radius of convergence, consider \( |z - z_0| = r \):
+    \[
+    \left| \frac{a_{n+1} (z - z_0)^{n+1}}{a_n (z - z_0)^n} \right| = \left| \frac{a_{n+1}}{a_n} \right| |z - z_0|.
+    \]
+    For convergence, we require
+    \[    \left| \frac{a_{n+1}}{a_n} \right| |z - z_0| < 1.    \]
+    Thus, the series converges when
+    \[    |z - z_0| < \frac{1}{L}.    \]
+</p>
+
+<p>
+    Therefore, the radius of convergence \( R \) is given by
+    \[    R = \frac{1}{L} = \frac{1}{\lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|}.    \]
+    Alternatively, using the root test, we get
+    \[    \frac{1}{R} = \limsup_{n \to \infty} \sqrt[n]{|a_n|}.
+    \]
+</p>
+
+<p>
+    In conclusion, the radius of convergence \( R \) is
+    \[    R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}}.
+    \]
+</p>
+</body>
+</html>

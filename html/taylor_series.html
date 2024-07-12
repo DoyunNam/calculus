@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <style>
+        body {
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Taylor Series</h1>
+    <p>The Taylor series of a function \( f(x) \) about \( x = a \) is given by:</p>
+    <p>
+        \[
+        f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x - a)^n
+        \]
+    </p>
+    <h2>Proof</h2>
+<p>To derive the Taylor series, we start with the function \( f(x) \) and assume it can be expressed as a power series:</p>
+<p>
+    \[    f(x) = \sum_{n=0}^{\infty} c_n (x - a)^n    \]
+</p>
+<p>Our goal is to determine the coefficients \( c_n \). By differentiating the series term by term and evaluating at \( x = a \), we obtain:</p>
+<p>
+    \[    f(a) = c_0    \]
+    \[    f'(x) = \sum_{n=1}^{\infty} n c_n (x - a)^{n-1}
+    \]
+    \[
+    f'(a) = c_1    \]
+</p>
+<p>Continuing this process, we find:</p>
+<p>
+    \[    f^{(n)}(x) = \sum_{k=n}^{\infty} \frac{k!}{(k-n)!} c_k (x - a)^{k-n}    \]
+    \[    f^{(n)}(a) = n! c_n    \]
+</p>
+<p>Therefore, the coefficients \( c_n \) are given by:</p>
+<p>
+    \[    c_n = \frac{f^{(n)}(a)}{n!}    \]
+</p>
+<p>Substituting these back into the power series, we obtain the Taylor series:</p>
+<p>
+    \[    f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x - a)^n    \]
+</p>
+
+<h2>Examples</h2>
+<h3>Example 1: Exponential Function</h3>
+<p>The Taylor series for \( e^x \) about \( x = 0 \) is:</p>
+<p>
+    \[    e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}    \]
+</p>
+
+<h3>Example 2: Sine Function</h3>
+<p>The Taylor series for \( \sin(x) \) about \( x = 0 \) is:</p>
+<p>
+    \[    \sin(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} x^{2n+1}    \]
+</p>
+
+<h3>Example 3: Cosine Function</h3>
+<p>The Taylor series for \( \cos(x) \) about \( x = 0 \) is:</p>
+<p>
+    \[    \cos(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} x^{2n}    \]
+</p>
+</body>
+</html>
