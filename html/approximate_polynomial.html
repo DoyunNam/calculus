@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <style>
+        body {
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Approximate Polynomial and Error</h2>
+
+<h3>Approximate Polynomial</h3>
+
+<p>Consider a function \( f(x) \) that is infinitely differentiable in some interval around \( x = a \). We can approximate \( f(x) \) using a polynomial known as the Taylor series:</p>
+
+<p>
+\[ 
+P_n(x) = f(a) + f'(a)(x - a) + \frac{f''(a)}{2!}(x - a)^2 + \cdots + \frac{f^{(n)}(a)}{n!}(x - a)^n 
+\]
+</p>
+
+<p>Here, \( P_n(x) \) is the Taylor polynomial of degree \( n \) centered at \( x = a \).</p>
+
+<h3>Error in Approximation</h3>
+
+<p>The error of approximating \( f(x) \) by \( P_n(x) \) is given by the remainder term \( R_n(x) \):</p>
+
+<p>
+\[ 
+R_n(x) = f(x) - P_n(x) 
+\]
+</p>
+
+<p>Using the Lagrange form of the remainder, we have:</p>
+
+<p>
+\[ 
+R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x - a)^{n+1} 
+\]
+</p>
+
+<p>for some \( \xi \) between \( a \) and \( x \).</p>
+
+<h3>Proof</h3>
+
+<p>To prove the formula for the remainder term, we use the Mean Value Theorem for integrals and repeated differentiation.</p>
+
+<ol>
+    <li>Define a new function:
+        <p>
+        \[ 
+        g(t) = f(t) - \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (t - a)^k 
+        \]
+        </p>
+        <p>This function \( g(t) \) represents the difference between \( f(t) \) and its \( n \)-th degree Taylor polynomial at \( t = a \).</p>
+    </li>
+    <li>Note that \( g(a) = 0, g'(a) = 0, \ldots, g^{(n)}(a) = 0 \).</li>
+    <li>Apply the Mean Value Theorem to \( g^{(n+1)}(t) \) over the interval \([a, x]\):
+        <p>
+        \[ 
+        g^{(n+1)}(\xi) = \frac{g^{(n)}(x) - g^{(n)}(a)}{x - a} 
+        \]
+        </p>
+        <p>Given \( g^{(n)}(a) = 0 \), we have:</p>
+        <p>
+        \[ 
+        g^{(n+1)}(\xi) = \frac{g^{(n)}(x)}{x - a} 
+        \]
+        </p>
+    </li>
+    <li>Repeating this process, we find that \( g(x) \) can be expressed as:
+        <p>
+        \[ 
+        g(x) = \frac{g^{(n+1)}(\xi)}{(n+1)!} (x - a)^{n+1} 
+        \]
+        </p>
+    </li>
+    <li>Thus, the remainder \( R_n(x) = g(x) \), giving us:
+        <p>
+        \[ 
+        R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x - a)^{n+1} 
+        \]
+        </p>
+    </li>
+</ol>
+
+<h3>Examples</h3>
+
+<ol>
+    <li>
+        <p><strong>Approximation of \( e^x \) near \( x = 0 \):</strong></p>
+        <p>
+        \[ 
+        e^x \approx 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} 
+        \]
+        </p>
+        <p>The error term for the 3rd degree polynomial is:</p>
+        <p>
+        \[ 
+        R_3(x) = \frac{e^\xi}{4!} x^4 \quad \text{for some } \xi \text{ between 0 and } x 
+        \]
+        </p>
+    </li>
+    <li>
+        <p><strong>Approximation of \( \sin(x) \) near \( x = 0 \):</strong></p>
+        <p>
+        \[ 
+        \sin(x) \approx x - \frac{x^3}{3!} 
+        \]
+        </p>
+        <p>The error term for the 3rd degree polynomial is:</p>
+        <p>
+        \[ 
+        R_3(x) = \frac{\cos(\xi)}{4!} x^4 \quad \text{for some } \xi \text{ between 0 and } x 
+        \]
+        </p>
+    </li>
+</ol>
+
+</body>
+</html>
