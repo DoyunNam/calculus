@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Useful Limits and Their Proofs</h2>
+
+    <p><strong>1. \( \lim_{h \to 0} \frac{\sin h}{h} = 1 \)</strong></p>
+    <p><strong>Proof:</strong></p>
+    <p>
+      Consider the unit circle and the angle \( h \) (in radians). The length of
+      the arc subtended by \( h \) is \( h \) itself. The sine of the angle \( h
+      \) is the length of the perpendicular from the point on the circle to the
+      x-axis. From \[ \sin h \leq h \leq \tan h \]
+    </p>
+    <p>we have the inequality:</p>
+    <p>\[ \cos h \leq \frac{\sin h}{h} \leq 1 \]</p>
+    <p>
+      As \( h \) approaches 0, \( \cos h \) approaches 1. Thus, by the Squeeze
+      Theorem:
+    </p>
+    <p>\[ \lim_{h \to 0} \frac{\sin h}{h} = 1 \]</p>
+
+    <p><strong>2. \( \lim_{h \to 0} \frac{e^h - 1}{h} = 1 \)</strong></p>
+    <p><strong>Proof:</strong></p>
+    <p>The derivative of \( e^x \) at \( x = 0 \) is defined as:</p>
+    <p>
+      \[ \frac{d}{dx} e^x \bigg|_{x=0} = \lim_{h \to 0} \frac{e^{h} - e^0}{h} =
+      \lim_{h \to 0} \frac{e^h - 1}{h} \]
+    </p>
+    <p>
+      Since the derivative of \( e^x \) is \( e^x \), and \( e^0 = 1 \), we get:
+    </p>
+    <p>\[ \lim_{h \to 0} \frac{e^h - 1}{h} = 1 \]</p>
+
+    <p><strong>3. \( \lim_{h \to 0} \frac{\ln(1+h)}{h} = 1 \)</strong></p>
+    <p><strong>Proof:</strong></p>
+    <p>The derivative of \( \ln(x) \) at \( x = 1 \) is defined as:</p>
+    <p>
+      \[ \frac{d}{dx} \ln(x) \bigg|_{x=1} = \lim_{h \to 0} \frac{\ln(1+h) -
+      \ln(1)}{h} = \lim_{h \to 0} \frac{\ln(1+h)}{h} \]
+    </p>
+    <p>
+      Since the derivative of \( \ln(x) \) is \( \frac{1}{x} \), and \(
+      \frac{1}{1} = 1 \), we get:
+    </p>
+    <p>\[ \lim_{h \to 0} \frac{\ln(1+h)}{h} = 1 \]</p>
+
+    <p><strong>4. \( \lim_{h \to 0} \frac{(1+h)^k - 1}{h} = k \)</strong></p>
+    <p><strong>Proof:</strong></p>
+    <p>The derivative of \( (1+x)^k \) at \( x = 0 \) is defined as:</p>
+    <p>
+      \[ \frac{d}{dx} (1+x)^k \bigg|_{x=0} = \lim_{h \to 0} \frac{(1+h)^k -
+      (1+0)^k}{h} = \lim_{h \to 0} \frac{(1+h)^k - 1}{h} \]
+    </p>
+    <p>
+      Using the binomial theorem, we can expand \( (1+h)^k \) around \( h = 0 \)
+      to get:
+    </p>
+    <p>\[ (1+h)^k \approx 1 + kh \]</p>
+    <p>Thus, the limit becomes:</p>
+    <p>\[ \lim_{h \to 0} \frac{(1+h)^k - 1}{h} = k \]</p>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Defining \(e\) and Proving Equivalences</h1>
+    <p>
+      The mathematical constant \(e\) can be defined in several equivalent ways.
+      Here are some of the most common definitions along with proofs of their
+      equivalence:
+    </p>
+
+    <h2>1. Limit Definition</h2>
+    <p>\[ e = \lim_{{n \to \infty}} \left(1 + \frac{1}{n}\right)^n \]</p>
+
+    <h2>2. Series Definition</h2>
+    <p>\[ e = \sum_{{n=0}}^{\infty} \frac{1}{n!} \]</p>
+
+    <h2>3. Differential Equation Definition</h2>
+    <p>
+      The number \(e\) is the unique number such that the function \(f(x) =
+      e^x\) satisfies:
+    </p>
+    <p>\[ \frac{d}{dx} e^x = e^x \quad \text{and} \quad e^0 = 1 \]</p>
+
+    <h2>Proofs of Equivalence</h2>
+    <h3>1. Limit and Series</h3>
+    <p>
+      Consider the limit definition: \[ e = \lim_{{n \to \infty}} \left(1 +
+      \frac{1}{n}\right)^n \] Using the binomial theorem, expand \(\left(1 +
+      \frac{1}{n}\right)^n\): \[ \left(1 + \frac{1}{n}\right)^n = \sum_{{k=0}}^n
+      \binom{n}{k} \left(\frac{1}{n}\right)^k \] For large \(n\), this
+      approximates: \[ \left(1 + \frac{1}{n}\right)^n \approx
+      \sum_{{k=0}}^{\infty} \frac{1}{k!} \] Therefore, as \(n \to \infty\), the
+      series converges to the series definition of \(e\): \[ e =
+      \sum_{{n=0}}^{\infty} \frac{1}{n!} \]
+    </p>
+
+    <h3>2. Series and Differential Equation</h3>
+    <p>
+      Consider the series definition: \[ e^x = \sum_{{n=0}}^{\infty}
+      \frac{x^n}{n!} \] Differentiate term by term: \[ \frac{d}{dx} \left(
+      \sum_{{n=0}}^{\infty} \frac{x^n}{n!} \right) = \sum_{{n=1}}^{\infty}
+      \frac{n x^{n-1}}{n!} = \sum_{{n=1}}^{\infty} \frac{x^{n-1}}{(n-1)!} =
+      \sum_{{m=0}}^{\infty} \frac{x^m}{m!} = e^x \] Therefore, \[ \frac{d}{dx}
+      e^x = e^x \quad \text{and} \quad e^0 = 1 \]
+    </p>
+    <!--
+    <h3>3. Differential Equation to Limit</h3>
+    <p>
+      Consider the function defined by the differential equation \( \frac{d}{dx}
+      e^x = e^x \) and the initial condition \( e^0 = 1 \). For small \(h\), use
+      the definition of the derivative: \[ e = e^1 = \lim_{{h \to 0}} \left(1 +
+      \frac{h}{h}\right)^{1/h} = \lim_{{n \to \infty}} \left(1 +
+      \frac{1}{n}\right)^n \]
+    </p>
+    -->
+    <p>
+      Thus, we have shown that the different definitions of \(e\) are
+      equivalent.
+    </p>
+  </body>
+</html>

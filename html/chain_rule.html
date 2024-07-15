@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Chain Rule of One Variable Functions</h2>
+    <p>
+      The chain rule in calculus is a formula for computing the derivative of
+      the composition of two or more functions. If we have two functions \(f\)
+      and \(g\), where \(y = f(u)\) and \(u = g(x)\), the chain rule states:
+    </p>
+    <p>\[ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} \]</p>
+    <h3>Proof of the Chain Rule</h3>
+    <p>
+      Let's denote \(y = f(u)\) and \(u = g(x)\). We want to find
+      \(\frac{dy}{dx}\).
+    </p>
+    <p>By definition of the derivative, we have:</p>
+    <p>
+      \[ \frac{dy}{dx} = \lim_{{\Delta x \to 0}} \frac{\Delta y}{\Delta x} \]
+    </p>
+    <p>
+      Since \(y = f(g(x))\), let \(\Delta y = f(g(x + \Delta x)) - f(g(x))\).
+    </p>
+    <p>We can rewrite \(\Delta y\) as:</p>
+    <p>
+      \[ \Delta y = f(g(x + \Delta x)) - f(g(x)) = f(u + \Delta u) - f(u) \]
+    </p>
+    <p>where \(\Delta u = g(x + \Delta x) - g(x)\).</p>
+    <p>Now, the difference quotient for \(f\) with respect to \(u\) is:</p>
+    <p>
+      \[ \frac{\Delta y}{\Delta u} = \frac{f(u + \Delta u) - f(u)}{\Delta u} \]
+    </p>
+    <p>and for \(g\) with respect to \(x\):</p>
+    <p>
+      \[ \frac{\Delta u}{\Delta x} = \frac{g(x + \Delta x) - g(x)}{\Delta x} \]
+    </p>
+    <p>Therefore,</p>
+    <p>
+      \[ \frac{\Delta y}{\Delta x} = \frac{\Delta y}{\Delta u} \cdot
+      \frac{\Delta u}{\Delta x} \]
+    </p>
+    <p>Taking the limit as \(\Delta x \to 0\), we get:</p>
+    <p>
+      \[ \frac{dy}{dx} = \lim_{{\Delta x \to 0}} \frac{\Delta y}{\Delta x} =
+      \lim_{{\Delta x \to 0}} \left( \frac{\Delta y}{\Delta u} \cdot
+      \frac{\Delta u}{\Delta x} \right) = \left( \lim_{{\Delta u \to 0}}
+      \frac{\Delta y}{\Delta u} \right) \cdot \left( \lim_{{\Delta x \to 0}}
+      \frac{\Delta u}{\Delta x} \right) \]
+    </p>
+    <p>which simplifies to:</p>
+    <p>\[ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} \]</p>
+  </body>
+</html>

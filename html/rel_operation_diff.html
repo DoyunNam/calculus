@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Relationship Between Operations and Differentiation</h1>
+
+    <h2>Sum Rule</h2>
+    <p>
+      The derivative of the sum of two functions is the sum of the derivatives
+      of the functions.
+    </p>
+    <p>Let \( f(x) \) and \( g(x) \) be differentiable functions. Then:</p>
+    <p>\[ \frac{d}{dx} [f(x) + g(x)] = f'(x) + g'(x) \]</p>
+    <p><b>Proof:</b></p>
+    <p>Using the definition of the derivative, we have:</p>
+    <p>
+      \[ \frac{d}{dx} [f(x) + g(x)] = \lim_{{h \to 0}} \frac{(f(x+h) + g(x+h)) -
+      (f(x) + g(x))}{h} \]
+    </p>
+    <p>Which simplifies to:</p>
+    <p>
+      \[ \frac{d}{dx} [f(x) + g(x)] = \lim_{{h \to 0}} \left[ \frac{f(x+h) -
+      f(x)}{h} + \frac{g(x+h) - g(x)}{h} \right] \]
+    </p>
+    <p>Since the limit of a sum is the sum of the limits:</p>
+    <p>
+      \[ \frac{d}{dx} [f(x) + g(x)] = \lim_{{h \to 0}} \frac{f(x+h) - f(x)}{h} +
+      \lim_{{h \to 0}} \frac{g(x+h) - g(x)}{h} \]
+    </p>
+    <p>Thus, we get:</p>
+    <p>\[ \frac{d}{dx} [f(x) + g(x)] = f'(x) + g'(x) \]</p>
+
+    <h2>Product Rule</h2>
+    <p>The derivative of the product of two functions is given by:</p>
+    <p>Let \( f(x) \) and \( g(x) \) be differentiable functions. Then:</p>
+    <p>
+      \[ \frac{d}{dx} [f(x) \cdot g(x)] = f(x) \cdot g'(x) + f'(x) \cdot g(x) \]
+    </p>
+    <p><b>Proof:</b></p>
+    <p>Using the definition of the derivative, we have:</p>
+    <p>
+      \[ \frac{d}{dx} [f(x) \cdot g(x)] = \lim_{{h \to 0}} \frac{f(x+h) \cdot
+      g(x+h) - f(x) \cdot g(x)}{h} \]
+    </p>
+    <p>Add and subtract \( f(x+h) \cdot g(x) \) inside the numerator:</p>
+    <p>
+      \[ \frac{d}{dx} [f(x) \cdot g(x)] = \lim_{{h \to 0}} \frac{f(x+h) \cdot
+      g(x+h) - f(x+h) \cdot g(x) + f(x+h) \cdot g(x) - f(x) \cdot g(x)}{h} \]
+    </p>
+    <p>Factor out common terms:</p>
+    <p>
+      \[ \frac{d}{dx} [f(x) \cdot g(x)] = \lim_{{h \to 0}} \left[ \frac{f(x+h)
+      \cdot (g(x+h) - g(x))}{h} + \frac{g(x) \cdot (f(x+h) - f(x))}{h} \right]
+      \]
+    </p>
+    <p>Separate the limits:</p>
+    <p>
+      \[ \frac{d}{dx} [f(x) \cdot g(x)] = \lim_{{h \to 0}} \frac{f(x+h) \cdot
+      (g(x+h) - g(x))}{h} + \lim_{{h \to 0}} \frac{g(x) \cdot (f(x+h) -
+      f(x))}{h} \]
+    </p>
+    <p>Evaluate the limits:</p>
+    <p>
+      \[ \frac{d}{dx} [f(x) \cdot g(x)] = f(x) \cdot g'(x) + f'(x) \cdot g(x) \]
+    </p>
+
+    <h2>Quotient Rule</h2>
+    <p>The derivative of the quotient of two functions is given by:</p>
+    <p>
+      Let \( f(x) \) and \( g(x) \) be differentiable functions, and \( g(x)
+      \neq 0 \). Then:
+    </p>
+    <p>
+      \[ \frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right] = \frac{f'(x) \cdot g(x)
+      - f(x) \cdot g'(x)}{[g(x)]^2} \]
+    </p>
+    <p><b>Proof:</b></p>
+    <p>Using the definition of the derivative, we have:</p>
+    <p>
+      \[ \frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right] = \lim_{{h \to 0}}
+      \frac{\frac{f(x+h)}{g(x+h)} - \frac{f(x)}{g(x)}}{h} \]
+    </p>
+    <p>Combine the fractions inside the limit:</p>
+    <p>
+      \[ \frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right] = \lim_{{h \to 0}}
+      \frac{f(x+h)g(x) - f(x)g(x+h)}{h \cdot g(x+h) \cdot g(x)} \]
+    </p>
+    <p>Rewrite the numerator:</p>
+    <p>
+      \[ \frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right] = \lim_{{h \to 0}}
+      \frac{f(x+h)g(x) - f(x)g(x) + f(x)g(x) - f(x)g(x+h)}{h \cdot g(x+h) \cdot
+      g(x)} \]
+    </p>
+    <p>Factor out common terms:</p>
+    <p>
+      \[ \frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right] = \lim_{{h \to 0}}
+      \frac{g(x) \cdot (f(x+h) - f(x)) - f(x) \cdot (g(x+h) - g(x))}{h \cdot
+      g(x+h) \cdot g(x)} \]
+    </p>
+    <p>Separate the limits:</p>
+    <p>
+      \[ \frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right] = \lim_{{h \to 0}}
+      \frac{g(x) \cdot (f(x+h) - f(x))}{h \cdot g(x+h) \cdot g(x)} - \lim_{{h
+      \to 0}} \frac{f(x) \cdot (g(x+h) - g(x))}{h \cdot g(x+h) \cdot g(x)} \]
+    </p>
+    <p>Evaluate the limits:</p>
+    <p>
+      \[ \frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right] = \frac {g(x) \cdot
+      f'(x)}{[g(x)]^2} - \frac{f(x) \cdot g'(x)}{[g(x)]^2} \]
+    </p>
+    <p>Combine the fractions:</p>
+    <p>
+      \[ \frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right] = \frac{f'(x) \cdot g(x)
+      - f(x) \cdot g'(x)}{[g(x)]^2} \]
+    </p>
+    <!--
+    <h2>Chain Rule</h2>
+    <p>The derivative of the composition of two functions is given by:</p>
+    <p>Let \( f(x) \) and \( g(x) \) be differentiable functions. Then:</p>
+    <p>\[ \frac{d}{dx} [f(g(x))] = f'(g(x)) \cdot g'(x) \]</p>
+    <p><b>Proof:</b></p>
+    <p>Using the definition of the derivative, we have:</p>
+    <p>
+      \[ \frac{d}{dx} [f(g(x))] = \lim_{{h \to 0}} \frac{f(g(x+h)) - f(g(x))}{h}
+      \]
+    </p>
+    <p>
+      Let \( u = g(x) \) and \( u + \Delta u = g(x+h) \). Then, as \( h \to 0
+      \), \( \Delta u \to 0 \) and we get:
+    </p>
+    <p>
+      \[ \frac{d}{dx} [f(g(x))] = \lim_{{\Delta u \to 0}} \frac{f(u + \Delta u)
+      - f(u)}{\Delta u} \cdot \lim_{{h \to 0}} \frac{\Delta u}{h} \]
+    </p>
+    <p>Using the chain rule for limits, we get:</p>
+    <p>\[ \frac{d}{dx} [f(g(x))] = f'(g(x)) \cdot g'(x) \]</p>
+    -->
+  </body>
+</html>

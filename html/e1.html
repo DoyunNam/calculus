@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Defining \( e \) in Mathematics</h1>
+
+    <h2>Definition 1: Limit Definition</h2>
+    <p>The number \( e \) can be defined as the limit:</p>
+    <p>\[ e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n \]</p>
+
+    <h2>Definition 2: Series Definition</h2>
+    <p>The number \( e \) can also be defined by the infinite series:</p>
+    <p>\[ e = \sum_{n=0}^{\infty} \frac{1}{n!} \]</p>
+
+    <h2>Definition 3: Differential Equation Definition</h2>
+    <p>
+      The number \( e \) is the unique number such that the function \( f(x) =
+      e^x \) satisfies the differential equation:
+    </p>
+    <p>\[ \frac{d}{dx} e^x = e^x \]</p>
+
+    <h2>Equivalence of Definitions</h2>
+    <h3>Equivalence of Limit and Series Definitions</h3>
+    <p>
+      First, we show that the series definition converges to the limit
+      definition. Consider the series:
+    </p>
+    <p>\[ e = \sum_{n=0}^{\infty} \frac{1}{n!} \]</p>
+    <p>We can write:</p>
+    <p>
+      \[ \left(1 + \frac{1}{n}\right)^n = \sum_{k=0}^{n} \binom{n}{k}
+      \left(\frac{1}{n}\right)^k \]
+    </p>
+    <p>
+      As \( n \to \infty \), the terms of the binomial expansion approximate the
+      terms of the series definition of \( e \), showing that the limit
+      definition converges to the same value as the series definition.
+    </p>
+
+    <h3>Equivalence of Series and Differential Equation Definitions</h3>
+    <p>
+      We show that the series definition satisfies the differential equation.
+      Consider:
+    </p>
+    <p>\[ e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} \]</p>
+    <p>Differentiating term-by-term, we get:</p>
+    <p>
+      \[ \frac{d}{dx} e^x = \sum_{n=1}^{\infty} \frac{nx^{n-1}}{n!} =
+      \sum_{n=1}^{\infty} \frac{x^{n-1}}{(n-1)!} = \sum_{m=0}^{\infty}
+      \frac{x^m}{m!} = e^x \]
+    </p>
+    <p>
+      where we let \( m = n-1 \). This shows that \( e^x \) satisfies the
+      differential equation, proving the equivalence of these definitions.
+    </p>
+
+    <h3>Conclusion</h3>
+    <p>
+      The number \( e \) can be equivalently defined by the limit, series, and
+      differential equation definitions, and we have shown their equivalence
+      through mathematical proofs.
+    </p>
+  </body>
+</html>
