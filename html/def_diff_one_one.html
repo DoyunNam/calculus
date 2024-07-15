@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Differentiation of a Function from \( \mathbb{R} \) to \( \mathbb{R} \)
+    </h1>
+    <p>
+      Differentiation is a concept in calculus that deals with the rate at which
+      a function is changing at any given point. If \( f: \mathbb{R} \to
+      \mathbb{R} \) is a function, its derivative, denoted by \( f'(x) \) or \(
+      \frac{df}{dx} \), represents the rate of change of \( f \) with respect to
+      \( x \). Formally, the derivative of \( f \) at \( x \) is defined as:
+    </p>
+    <p>\[ f'(x) = \lim_{{h \to 0}} \frac{f(x+h) - f(x)}{h} \]</p>
+    <p>
+      This limit, if it exists, gives the slope of the tangent line to the graph
+      of \( f \) at the point \( (x, f(x)) \).
+    </p>
+
+    <h2>Examples</h2>
+    <p>1. Let \( f(x) = x^2 \). The derivative of \( f \) is:</p>
+    <p>
+      \[ f'(x) = \lim_{{h \to 0}} \frac{(x+h)^2 - x^2}{h} = \lim_{{h \to 0}}
+      \frac{x^2 + 2xh + h^2 - x^2}{h} = \lim_{{h \to 0}} \frac{2xh + h^2}{h} =
+      \lim_{{h \to 0}} (2x + h) = 2x \]
+    </p>
+
+    <p>2. Let \( f(x) = \sin(x) \). The derivative of \( f \) is:</p>
+    <p>\[ f'(x) = \lim_{{h \to 0}} \frac{\sin(x+h) - \sin(x)}{h} \]</p>
+    <p>Using the trigonometric identity for the sine of a sum, we get:</p>
+    <p>
+      \[ f'(x) = \lim_{{h \to 0}} \frac{\sin(x)\cos(h) + \cos(x)\sin(h) -
+      \sin(x)}{h} = \lim_{{h \to 0}} \left( \sin(x) \frac{\cos(h) - 1}{h} +
+      \cos(x) \frac{\sin(h)}{h} \right) \]
+    </p>
+    <p>
+      Knowing that \( \lim_{{h \to 0}} \frac{\cos(h) - 1}{h} = 0 \) and \(
+      \lim_{{h \to 0}} \frac{\sin(h)}{h} = 1 \), we get:
+    </p>
+    <p>\[ f'(x) = \cos(x) \]</p>
+
+    <p>3. Let \( f(x) = e^x \). The derivative of \( f \) is:</p>
+    <p>
+      \[ f'(x) = \lim_{{h \to 0}} \frac{e^{x+h} - e^x}{h} = \lim_{{h \to 0}}
+      \frac{e^x e^h - e^x}{h} = e^x \lim_{{h \to 0}} \frac{e^h - 1}{h} \]
+    </p>
+    <p>Since \( \lim_{{h \to 0}} \frac{e^h - 1}{h} = 1 \), we get:</p>
+    <p>\[ f'(x) = e^x \]</p>
+  </body>
+</html>

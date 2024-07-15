@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Differentiation of Logarithmic Functions</h1>
+    <p>
+      The differentiation of logarithmic functions can be expressed as follows:
+    </p>
+    <p>
+      The derivative of the natural logarithm \( \ln(x) \): \[ \frac{d}{dx}
+      \ln(x) = \frac{1}{x} \]
+    </p>
+    <p>
+      The derivative of the logarithm with base \(a\), \( \log_a(x) \): \[
+      \frac{d}{dx} \log_a(x) = \frac{1}{x \ln(a)} \]
+    </p>
+    <h2>Proofs</h2>
+    <h3>1. Derivative of \( \ln(x) \)</h3>
+    <p>To prove \( \frac{d}{dx} \ln(x) = \frac{1}{x} \):</p>
+    <p>
+      Let \( y = \ln(x) \). Then, by the definition of the natural logarithm: \[
+      e^y = x \] Differentiating both sides with respect to \( x \): \[
+      \frac{d}{dx} (e^y) = \frac{d}{dx} (x) \] Using the chain rule on the left
+      side: \[ e^y \frac{dy}{dx} = 1 \] Since \( e^y = x \): \[ x \frac{dy}{dx}
+      = 1 \] Solving for \( \frac{dy}{dx} \): \[ \frac{dy}{dx} = \frac{1}{x} \]
+      Hence, \[ \frac{d}{dx} \ln(x) = \frac{1}{x} \]
+    </p>
+    <h3>2. Derivative of \( \log_a(x) \)</h3>
+    <p>To prove \( \frac{d}{dx} \log_a(x) = \frac{1}{x \ln(a)} \):</p>
+    <p>
+      Recall the change of base formula for logarithms: \[ \log_a(x) =
+      \frac{\ln(x)}{\ln(a)} \] Let \( y = \log_a(x) \). Then: \[ y =
+      \frac{\ln(x)}{\ln(a)} \] Differentiating both sides with respect to \( x
+      \): \[ \frac{dy}{dx} = \frac{1}{\ln(a)} \frac{d}{dx} (\ln(x)) \] From the
+      derivative of \( \ln(x) \): \[ \frac{d}{dx} (\ln(x)) = \frac{1}{x} \]
+      Substituting this into the equation: \[ \frac{dy}{dx} = \frac{1}{\ln(a)}
+      \cdot \frac{1}{x} \] Therefore, \[ \frac{d}{dx} \log_a(x) = \frac{1}{x
+      \ln(a)} \]
+    </p>
+  </body>
+</html>

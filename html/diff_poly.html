@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Differentiation of x^r</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Differentiation of \( x^r \)</h1>
+    <p>The differentiation of \( x^r \) with respect to \( x \) is given by:</p>
+    <p>\[ \frac{d}{dx} x^r = r x^{r-1} \]</p>
+
+    <h2>Proofs for Different Types of \( r \)</h2>
+
+    <h3>1. \( r \) is a Natural Number</h3>
+    <p>
+      Let \( r = n \) where \( n \in \mathbb{N} \). Using the definition of the
+      derivative:
+    </p>
+    <p>\[ \frac{d}{dx} x^n = \lim_{{h \to 0}} \frac{(x+h)^n - x^n}{h} \]</p>
+    <p>Using the binomial theorem, we get:</p>
+    <p>
+      \[ (x+h)^n = \sum_{{k=0}}^{n} \binom{n}{k} x^{n-k} h^k = x^n + nx^{n-1}h +
+      \frac{n(n-1)}{2} x^{n-2} h^2 + \cdots + h^n \]
+    </p>
+    <p>So,</p>
+    <p>
+      \[ \frac{(x+h)^n - x^n}{h} = nx^{n-1} + \frac{n(n-1)}{2} x^{n-2} h +
+      \cdots + h^{n-1} \]
+    </p>
+    <p>
+      Taking the limit as \( h \to 0 \), all terms involving \( h \) vanish:
+    </p>
+    <p>\[ \lim_{{h \to 0}} \frac{(x+h)^n - x^n}{h} = nx^{n-1} \]</p>
+
+    <h3>2. \( r \) is an Integer</h3>
+    <p>
+      Let \( r = n \) where \( n \in \mathbb{Z} \). For negative integers,
+      consider \( n = -m \) where \( m \in \mathbb{N} \). Then:
+    </p>
+    <p>\[ \frac{d}{dx} x^{-m} = \frac{d}{dx} \left( \frac{1}{x^m} \right) \]</p>
+    <p>Using the chain rule:</p>
+    <p>\[ \frac{d}{dx} x^{-m} = -m x^{-m-1} \]</p>
+
+    <h3>3. \( r \) is a Rational Number</h3>
+    <p>
+      Let \( r = \frac{p}{q} \) where \( p \in \mathbb{Z} \) and \( q \in
+      \mathbb{N} \). We can use the chain rule by rewriting \( x^{\frac{p}{q}}
+      \) as \( (x^{\frac{1}{q}})^p \):
+    </p>
+    <p>
+      \[ y = x^{\frac{1}{q}}, \quad \text{then} \quad y^q = x \quad \text{and}
+      \quad y^{p} = x^{\frac{p}{q}} \]
+    </p>
+    <p>Using the chain rule, we get:</p>
+    <p>
+      \[ \frac{d}{dx} x^{\frac{p}{q}} = \frac{d}{dx} y^p = p y^{p-1} \cdot
+      \frac{d}{dx} y = p x^{\frac{p}{q} - 1} \cdot \frac{1}{q} x^{\frac{1}{q} -
+      1} \]
+    </p>
+    <p>Simplifying, we get:</p>
+    <p>\[ \frac{d}{dx} x^{\frac{p}{q}} = \frac{p}{q} x^{\frac{p}{q} - 1} \]</p>
+
+    <h3>4. \( r \) is a Real Number</h3>
+    <p>For real \( r \), we can use logarithmic differentiation. Let:</p>
+    <p>\[ y = x^r \quad \Rightarrow \quad \ln y = r \ln x \]</p>
+    <p>Differentiating both sides with respect to \( x \):</p>
+    <p>\[ \frac{1}{y} \frac{dy}{dx} = r \frac{1}{x} \]</p>
+    <p>Multiplying both sides by \( y = x^r \), we get:</p>
+    <p>\[ \frac{dy}{dx} = r x^{r-1} \]</p>
+  </body>
+</html>

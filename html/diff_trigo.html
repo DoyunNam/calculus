@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Differentiation of Trigonometric Functions</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Differentiation of Trigonometric Functions</h1>
+    <p>
+      The differentiation of the six basic trigonometric functions are as
+      follows:
+    </p>
+    <ul>
+      <li>\(\frac{d}{dx} \sin(x) = \cos(x)\)</li>
+      <li>\(\frac{d}{dx} \cos(x) = -\sin(x)\)</li>
+      <li>\(\frac{d}{dx} \tan(x) = \sec^2(x)\)</li>
+      <li>\(\frac{d}{dx} \cot(x) = -\csc^2(x)\)</li>
+      <li>\(\frac{d}{dx} \sec(x) = \sec(x) \tan(x)\)</li>
+      <li>\(\frac{d}{dx} \csc(x) = -\csc(x) \cot(x)\)</li>
+    </ul>
+
+    <h2>Proofs</h2>
+    <h3>1. \(\frac{d}{dx} \sin(x) = \cos(x)\)</h3>
+    <p>Using the limit definition of the derivative:</p>
+    <p>
+      \[ \frac{d}{dx} \sin(x) = \lim_{{h \to 0}} \frac{\sin(x+h) - \sin(x)}{h}
+      \]
+    </p>
+    <p>Using the trigonometric identity for \(\sin(a+b)\):</p>
+    <p>\[ \sin(x+h) = \sin(x)\cos(h) + \cos(x)\sin(h) \]</p>
+    <p>Substituting this into the limit expression:</p>
+    <p>
+      \[ \frac{d}{dx} \sin(x) = \lim_{{h \to 0}} \frac{\sin(x)\cos(h) +
+      \cos(x)\sin(h) - \sin(x)}{h} \]
+    </p>
+    <p>Rearranging terms:</p>
+    <p>
+      \[ \frac{d}{dx} \sin(x) = \lim_{{h \to 0}} \left( \sin(x) \frac{\cos(h) -
+      1}{h} + \cos(x) \frac{\sin(h)}{h} \right) \]
+    </p>
+    <p>
+      Using the known limits \(\lim_{{h \to 0}} \frac{\sin(h)}{h} = 1\) and
+      \(\lim_{{h \to 0}} \frac{\cos(h) - 1}{h} = 0\):
+    </p>
+    <p>
+      \[ \frac{d}{dx} \sin(x) = \sin(x) \cdot 0 + \cos(x) \cdot 1 = \cos(x) \]
+    </p>
+
+    <h3>2. \(\frac{d}{dx} \cos(x) = -\sin(x)\)</h3>
+    <p>Using the limit definition of the derivative:</p>
+    <p>
+      \[ \frac{d}{dx} \cos(x) = \lim_{{h \to 0}} \frac{\cos(x+h) - \cos(x)}{h}
+      \]
+    </p>
+    <p>Using the trigonometric identity for \(\cos(a+b)\):</p>
+    <p>\[ \cos(x+h) = \cos(x)\cos(h) - \sin(x)\sin(h) \]</p>
+    <p>Substituting this into the limit expression:</p>
+    <p>
+      \[ \frac{d}{dx} \cos(x) = \lim_{{h \to 0}} \frac{\cos(x)\cos(h) -
+      \sin(x)\sin(h) - \cos(x)}{h} \]
+    </p>
+    <p>Rearranging terms:</p>
+    <p>
+      \[ \frac{d}{dx} \cos(x) = \lim_{{h \to 0}} \left( \cos(x) \frac{\cos(h) -
+      1}{h} - \sin(x) \frac{\sin(h)}{h} \right) \]
+    </p>
+    <p>
+      Using the known limits \(\lim_{{h \to 0}} \frac{\sin(h)}{h} = 1\) and
+      \(\lim_{{h \to 0}} \frac{\cos(h) - 1}{h} = 0\):
+    </p>
+    <p>
+      \[ \frac{d}{dx} \cos(x) = \cos(x) \cdot 0 - \sin(x) \cdot 1 = -\sin(x) \]
+    </p>
+
+    <h3>3. \(\frac{d}{dx} \tan(x) = \sec^2(x)\)</h3>
+    <p>
+      Using the quotient rule \(\frac{d}{dx} \left(\frac{u}{v}\right) =
+      \frac{u'v - uv'}{v^2}\) where \(u = \sin(x)\) and \(v = \cos(x)\):
+    </p>
+    <p>
+      \[ \frac{d}{dx} \tan(x) = \frac{d}{dx}
+      \left(\frac{\sin(x)}{\cos(x)}\right) = \frac{\cos(x)\cos(x) -
+      (-\sin(x))\sin(x)}{\cos^2(x)} \]
+    </p>
+    <p>Simplifying the numerator:</p>
+    <p>
+      \[ = \frac{\cos^2(x) + \sin^2(x)}{\cos^2(x)} = \frac{1}{\cos^2(x)} =
+      \sec^2(x) \]
+    </p>
+
+    <h3>4. \(\frac{d}{dx} \cot(x) = -\csc^2(x)\)</h3>
+    <p>Using the quotient rule where \(u = \cos(x)\) and \(v = \sin(x)\):</p>
+    <p>
+      \[ \frac{d}{dx} \cot(x) = \frac{d}{dx}
+      \left(\frac{\cos(x)}{\sin(x)}\right) = \frac{-\sin(x)\sin(x) -
+      \cos(x)\cos(x)}{\sin^2(x)} \]
+    </p>
+    <p>Simplifying the numerator:</p>
+    <p>
+      \[ = \frac{-\sin^2(x) - \cos^2(x)}{\sin^2(x)} = \frac{-1}{\sin^2(x)} =
+      -\csc^2(x) \]
+    </p>
+
+    <h3>5. \(\frac{d}{dx} \sec(x) = \sec(x) \tan(x)\)</h3>
+    <p>Using the quotient rule where \(u = 1\) and \(v = \cos(x)\):</p>
+    <p>
+      \[ \frac{d}{dx} \sec(x) = \frac{d}{dx} \left(\frac{1}{\cos(x)}\right) =
+      \frac{0 \cdot \cos(x) - 1 \cdot (-\sin(x))}{\cos^2(x)} \]
+    </p>
+    <p>Simplifying:</p>
+    <p>
+      \[ = \frac{\sin(x)}{\cos^2(x)} = \frac{1}{\cos(x)} \cdot
+      \frac{\sin(x)}{\cos(x)} = \sec(x) \tan(x) \]
+    </p>
+
+    <h3>6. \(\frac{d}{dx} \csc(x) = -\csc(x) \cot(x)\)</h3>
+    <p>Using the quotient rule where \(u = 1\) and \(v = \sin(x)\):</p>
+    <p>
+      \[ \frac{d}{dx} \csc(x) = \frac{d}{dx} \left(\frac{1}{\sin(x)}\right) =
+      \frac{0 \cdot \sin(x) - 1 \cdot \cos(x)}{\sin^2(x)} \]
+    </p>
+    <p>Simplifying:</p>
+    <p>
+      \[ = \frac{-\cos(x)}{\sin^2(x)} = -\frac{1}{\sin(x)} \cdot
+      \frac{\cos(x)}{\sin(x)} = -\csc(x) \cot(x) \]
+    </p>
+  </body>
+</html>
