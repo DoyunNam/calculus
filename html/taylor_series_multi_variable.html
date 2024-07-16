@@ -1,0 +1,181 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Taylor Series for Multivariable Functions</h1>
+    <p>
+      The Taylor series for a function \( f(x, y) \) about the point \( (a, b)
+      \) is given by:
+    </p>
+    <p>
+      \[ f(x, y) \approx f(a, b) + \frac{\partial f}{\partial x}(a, b)(x - a) +
+      \frac{\partial f}{\partial y}(a, b)(y - b) + \frac{1}{2!} \left[
+      \frac{\partial^2 f}{\partial x^2}(a, b)(x - a)^2 + 2\frac{\partial^2
+      f}{\partial x \partial y}(a, b)(x - a)(y - b) + \frac{\partial^2
+      f}{\partial y^2}(a, b)(y - b)^2 \right] + \cdots \]
+    </p>
+    <p>
+      Where \( \frac{\partial f}{\partial x} \), \( \frac{\partial f}{\partial
+      y} \), \( \frac{\partial^2 f}{\partial x^2} \), \( \frac{\partial^2
+      f}{\partial y^2} \), and \( \frac{\partial^2 f}{\partial x \partial y} \)
+      are the first and second partial derivatives of \( f \) evaluated at \(
+      (a, b) \).
+    </p>
+
+    <h2>Examples</h2>
+
+    <h3>Example 1: \( f(x, y) = e^{x+y} \)</h3>
+    <p>The Taylor series expansion around \( (0, 0) \) is:</p>
+    <p>
+      \[ e^{x+y} \approx 1 + (x+y) + \frac{(x+y)^2}{2!} + \frac{(x+y)^3}{3!} +
+      \cdots \]
+    </p>
+
+    <h3>Example 2: \( f(x, y) = \sin(x) \cos(y) \)</h3>
+    <p>The Taylor series expansion around \( (0, 0) \) is:</p>
+    <p>
+      \[ \sin(x) \cos(y) \approx 0 + x - \frac{x^3}{6} - \frac{xy^2}{2} + \cdots
+      \]
+    </p>
+
+    <h3>Example 3: \( f(x, y) = x^2 + y^2 \)</h3>
+    <p>The Taylor series expansion around \( (0, 0) \) is:</p>
+    <p>\[ x^2 + y^2 \approx x^2 + y^2 \]</p>
+    <p>
+      In this case, the function itself is a polynomial, so the Taylor series is
+      the function itself.
+    </p>
+  </body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Taylor Series for Multivariable Functions</h1>
+
+    <h2>Definition</h2>
+    <p>
+      The Taylor series of a function \( f \) at a point \( \mathbf{a} = (a_1,
+      a_2, \ldots, a_n) \) is given by:
+    </p>
+    <p>
+      \[ f(\mathbf{x}) = f(\mathbf{a}) + \sum_{i=1}^n \frac{\partial f}{\partial
+      x_i}(\mathbf{a})(x_i - a_i) + \frac{1}{2!} \sum_{i=1}^n \sum_{j=1}^n
+      \frac{\partial^2 f}{\partial x_i \partial x_j}(\mathbf{a})(x_i - a_i)(x_j
+      - a_j) + \cdots \]
+    </p>
+    <p>In a more compact form, this can be written as:</p>
+    <p>
+      \[ f(\mathbf{x}) = \sum_{|\alpha| \geq 0} \frac{D^\alpha
+      f(\mathbf{a})}{\alpha!} (\mathbf{x} - \mathbf{a})^\alpha \]
+    </p>
+    <p>
+      where \( \alpha = (\alpha_1, \alpha_2, \ldots, \alpha_n) \) is a
+      multi-index, \( |\alpha| = \alpha_1 + \alpha_2 + \cdots + \alpha_n \), \(
+      \alpha! = \alpha_1! \alpha_2! \cdots \alpha_n! \), \( D^\alpha =
+      \frac{\partial^{|\alpha|}}{\partial x_1^{\alpha_1} \partial x_2^{\alpha_2}
+      \cdots \partial x_n^{\alpha_n}} \), and \( (\mathbf{x} -
+      \mathbf{a})^\alpha = (x_1 - a_1)^{\alpha_1} (x_2 - a_2)^{\alpha_2} \cdots
+      (x_n - a_n)^{\alpha_n} \).
+    </p>
+
+    <h2>Proof</h2>
+    <p>
+      The proof of the Taylor series for a multivariable function follows
+      similar lines to the single-variable case but requires handling partial
+      derivatives and multi-index notation.
+    </p>
+    <p>
+      Consider a function \( f \) that is infinitely differentiable at \(
+      \mathbf{a} \). We start with the first-order approximation:
+    </p>
+    <p>
+      \[ f(\mathbf{x}) \approx f(\mathbf{a}) + \sum_{i=1}^n \frac{\partial
+      f}{\partial x_i}(\mathbf{a})(x_i - a_i) \]
+    </p>
+    <p>Including the second-order terms, we get:</p>
+    <p>
+      \[ f(\mathbf{x}) \approx f(\mathbf{a}) + \sum_{i=1}^n \frac{\partial
+      f}{\partial x_i}(\mathbf{a})(x_i - a_i) + \frac{1}{2!} \sum_{i=1}^n
+      \sum_{j=1}^n \frac{\partial^2 f}{\partial x_i \partial
+      x_j}(\mathbf{a})(x_i - a_i)(x_j - a_j) \]
+    </p>
+    <p>By induction, including higher-order terms gives the general form:</p>
+    <p>
+      \[ f(\mathbf{x}) = \sum_{|\alpha| \geq 0} \frac{D^\alpha
+      f(\mathbf{a})}{\alpha!} (\mathbf{x} - \mathbf{a})^\alpha \]
+    </p>
+
+    <h2>Examples</h2>
+    <p>
+      <strong>Example 1:</strong> Consider \( f(x, y) = e^{x+y} \). The Taylor
+      series at \( (0,0) \) is:
+    </p>
+    <p>
+      \[ e^{x+y} = 1 + (x+y) + \frac{(x+y)^2}{2!} + \frac{(x+y)^3}{3!} + \cdots
+      \]
+    </p>
+
+    <p>
+      <strong>Example 2:</strong> Consider \( f(x, y) = \sin(x) \cos(y) \). The
+      Taylor series at \( (0,0) \) is:
+    </p>
+    <p>
+      \[ \sin(x)\cos(y) = xy - \frac{x^3y}{6} - \frac{xy^3}{6} +
+      \frac{x^3y^3}{36} + \cdots \]
+    </p>
+  </body>
+</html>

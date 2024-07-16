@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Uniform Convergence</h1>
+    <p>
+      A sequence of functions \( \{ f_n \} \) defined on a set \( A \) is said
+      to converge uniformly to a function \( f \) if for every \( \epsilon > 0
+      \), there exists an integer \( N \) such that for all \( n \geq N \) and
+      for all \( x \in A \), \[ | f_n(x) - f(x) | < \epsilon. \]
+    </p>
+    <p>
+      This means that the convergence of \( f_n \) to \( f \) happens at the
+      same rate for all points \( x \in A \). Uniform convergence is stronger
+      than pointwise convergence, which only requires \( f_n(x) \) to converge
+      to \( f(x) \) for each individual \( x \in A \) as \( n \to \infty \).
+    </p>
+
+    <h2>Example 1</h2>
+    <p>
+      Consider the sequence of functions \( f_n(x) = x^n \) defined on the
+      interval \([0, 1]\). For \( x \in [0, 1) \), \[ \lim_{n \to \infty} f_n(x)
+      = \lim_{n \to \infty} x^n = 0, \] and for \( x = 1 \), \[ \lim_{n \to
+      \infty} f_n(1) = 1. \] Hence, \( f_n \) converges pointwise to the
+      function \[ f(x) = \begin{cases} 0 & \text{if } x \in [0, 1) \\ 1 &
+      \text{if } x = 1 \end{cases}. \] However, the convergence is not uniform
+      because for any \( N \), we can find \( x \) close enough to 1 such that
+      \( | f_n(x) - f(x) | \) is not small for all \( n \geq N \).
+    </p>
+
+    <h2>Example 2</h2>
+    <p>
+      Consider the sequence of functions \( f_n(x) = \frac{x}{n} \) defined on
+      the interval \([0, 1]\). For all \( x \in [0, 1] \), \[ \lim_{n \to
+      \infty} f_n(x) = \lim_{n \to \infty} \frac{x}{n} = 0. \] Hence, \( f_n \)
+      converges pointwise to the zero function \( f(x) = 0 \). The convergence
+      is also uniform because for any \( \epsilon > 0 \), we can choose \( N \)
+      such that for all \( n \geq N \) and for all \( x \in [0, 1] \), \[ \left|
+      \frac{x}{n} \right| < \epsilon. \]
+    </p>
+  </body>
+</html>

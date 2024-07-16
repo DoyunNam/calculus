@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Green's Theorem</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Green's Theorem</h1>
+    <p>
+      <strong>Statement:</strong> Green's Theorem relates a line integral around
+      a simple closed curve \( C \) to a double integral over the plane region
+      \( D \) bounded by \( C \). The theorem is stated as follows:
+    </p>
+    <p>
+      \[ \oint_C (P \, dx + Q \, dy) = \iint_D \left( \frac{\partial Q}{\partial
+      x} - \frac{\partial P}{\partial y} \right) \, dA \]
+    </p>
+
+    <h2>Proof:</h2>
+    <p>
+      The proof of Green's Theorem can be divided into two parts, considering
+      the components \( P \, dx \) and \( Q \, dy \) separately. We start with
+      the component \( P \, dx \). Assume that the orientation of a curve \( C
+      \) is counterclockwise.
+    </p>
+    <h3>1. Proof for \( \oint_C P \, dx \):</h3>
+    <p>
+      Consider a region \( D \) in the plane bounded by the simple closed curve
+      \( C \). We can divide \( D \) into many small rectangles by drawing lines
+      parallel to the \( x \)- and \( y \)-axes.
+    </p>
+    <p>
+      For a small rectangle with sides of length \( \Delta x \) and \( \Delta y
+      \), the contribution to the line integral \( \oint_C P \, dx \) is the sum
+      of the values of \( P \) along the top and bottom edges of the rectangle:
+    </p>
+    <p>
+      \[ - \oint_{\text{rectangle}} P \, dx = P(x, y+\Delta y) \Delta x - P(x,
+      y) \Delta x = \left( P(x, y+\Delta y) - P(x, y) \right) \Delta x \]
+    </p>
+    <p>As \( \Delta y \to 0 \), this becomes:</p>
+    <p>
+      \[ - \oint_{\text{rectangle}} P \, dx = \frac{\partial P}{\partial y}
+      \Delta x \Delta y \]
+    </p>
+    <p>Summing over all such rectangles in \( D \), we get:</p>
+    <p>\[ \oint_C P \, dx = - \iint_D \frac{\partial P}{\partial y} \, dA \]</p>
+    <h3>2. Proof for \( \oint_C Q \, dy \):</h3>
+    <p>
+      Similarly, consider the component \( Q \, dy \). For a small rectangle,
+      the contribution to the line integral \( \oint_C Q \, dy \) is the sum of
+      the values of \( Q \) along the left and right edges of the rectangle:
+    </p>
+    <p>
+      \[ \oint_{\text{rectangle}} Q \, dy = Q(x+\Delta x, y) \Delta y - Q(x, y)
+      \Delta y = \left( Q(x+\Delta x, y) - Q(x, y) \right) \Delta y \]
+    </p>
+    <p>As \( \Delta x \to 0 \), this becomes:</p>
+    <p>
+      \[ \oint_{\text{rectangle}} Q \, dy = \frac{\partial Q}{\partial x} \Delta
+      x \Delta y \]
+    </p>
+    <p>Summing over all such rectangles in \( D \), we get:</p>
+    <p>\[ \oint_C Q \, dy = \iint_D \frac{\partial Q}{\partial x} \, dA \]</p>
+    <p>Combining both parts, we have:</p>
+    <p>
+      \[ \oint_C (P \, dx + Q \, dy) = \iint_D \left( \frac{\partial Q}{\partial
+      x} - \frac{\partial P}{\partial y} \right) \, dA \]
+    </p>
+    <p>Thus, Green's Theorem is proved.</p>
+
+    <h2>Examples:</h2>
+    <h3>Example 1:</h3>
+    <p>
+      Let \( P = -y \) and \( Q = x \). Calculate \( \oint_C (-y \, dx + x \,
+      dy) \) where \( C \) is the unit circle \( x^2 + y^2 = 1 \).
+    </p>
+    <p>Using Green's Theorem:</p>
+    <p>
+      \[ \oint_C (-y \, dx + x \, dy) = \iint_D \left( \frac{\partial
+      x}{\partial x} - \frac{\partial (-y)}{\partial y} \right) \, dA = \iint_D
+      (1 + 1) \, dA = 2 \iint_D \, dA \]
+    </p>
+    <p>Since \( D \) is the unit disk, \( \iint_D \, dA = \pi \), so:</p>
+    <p>\[ \oint_C (-y \, dx + x \, dy) = 2\pi \]</p>
+
+    <h3>Example 2:</h3>
+    <p>
+      Let \( P = 2xy \) and \( Q = x^2 \). Calculate \( \oint_C (2xy \, dx + x^2
+      \, dy) \) where \( C \) is the triangle with vertices at \( (0,0) \), \(
+      (1,0) \), and \( (0,1) \).
+    </p>
+    <p>Using Green's Theorem:</p>
+    <p>
+      \[ \oint_C (2xy \, dx + x^2 \, dy) = \iint_D \left( \frac{\partial
+      x^2}{\partial x} - \frac{\partial (2xy)}{\partial y} \right) \, dA =
+      \iint_D (2x - 2x) \, dA = \iint_D 0 \, dA = 0 \]
+    </p>
+    <p>Thus:</p>
+    <p>\[ \oint_C (2xy \, dx + x^2 \, dy) = 0 \]</p>
+  </body>
+</html>

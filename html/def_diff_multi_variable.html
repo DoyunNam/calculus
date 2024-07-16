@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+    <title>Differentiation of a Function</title>
+  </head>
+  <body>
+    <h1>
+      Differentiation of a Function from \( \mathbb{R}^n \) to \( \mathbb{R}^m
+      \)
+    </h1>
+    <p>
+      Let \( f: \mathbb{R}^n \to \mathbb{R}^m \) be a function. The function \(
+      f \) is said to be differentiable at a point \( \mathbf{a} \in
+      \mathbb{R}^n \) if there exists a linear map \( Df(\mathbf{a}):
+      \mathbb{R}^n \to \mathbb{R}^m \) such that
+    </p>
+    <p>
+      \[ \lim_{\mathbf{h} \to \mathbf{0}} \frac{\| f(\mathbf{a} + \mathbf{h}) -
+      f(\mathbf{a}) - Df(\mathbf{a})(\mathbf{h}) \|}{\| \mathbf{h} \|} = 0. \]
+    </p>
+    <p>
+      The linear map \( Df(\mathbf{a}) \) is called the <em>derivative</em> or
+      <em>differential</em> of \( f \) at \( \mathbf{a} \). It is often
+      represented by the Jacobian matrix, which is an \( m \times n \) matrix
+      given by
+    </p>
+    <p>
+      \[ J_f(\mathbf{a}) = \begin{bmatrix} \frac{\partial f_1}{\partial
+      x_1}(\mathbf{a}) & \frac{\partial f_1}{\partial x_2}(\mathbf{a}) & \cdots
+      & \frac{\partial f_1}{\partial x_n}(\mathbf{a}) \\ \frac{\partial
+      f_2}{\partial x_1}(\mathbf{a}) & \frac{\partial f_2}{\partial
+      x_2}(\mathbf{a}) & \cdots & \frac{\partial f_2}{\partial x_n}(\mathbf{a})
+      \\ \vdots & \vdots & \ddots & \vdots \\ \frac{\partial f_m}{\partial
+      x_1}(\mathbf{a}) & \frac{\partial f_m}{\partial x_2}(\mathbf{a}) & \cdots
+      & \frac{\partial f_m}{\partial x_n}(\mathbf{a}) \end{bmatrix}. \]
+    </p>
+    <h2>Examples</h2>
+    <p><strong>Example 1: Linear Transformation</strong></p>
+    <p>
+      Consider the function \( f: \mathbb{R}^2 \to \mathbb{R}^2 \) defined by \(
+      f(x, y) = (2x, 3y) \). The Jacobian matrix of \( f \) is
+    </p>
+    <p>\[ J_f(x, y) = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}. \]</p>
+    <p><strong>Example 2: Non-linear Transformation</strong></p>
+    <p>
+      Consider the function \( g: \mathbb{R}^2 \to \mathbb{R}^2 \) defined by \(
+      g(x, y) = (x^2, \sin(y)) \). The Jacobian matrix of \( g \) is
+    </p>
+    <p>
+      \[ J_g(x, y) = \begin{bmatrix} 2x & 0 \\ 0 & \cos(y) \end{bmatrix}. \]
+    </p>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Power Series</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Power Series</h1>
+    <p>A power series is an infinite series of the form:</p>
+    <p>\[ \sum_{n=0}^{\infty} a_n (x - c)^n \]</p>
+    <p>
+      where \(a_n\) represents the coefficient of the \(n\)-th term, \(c\) is a
+      constant, and \(x\) is the variable. Power series are used to represent
+      functions as infinite sums of their terms.
+    </p>
+
+    <h2>Examples of Power Series</h2>
+    <p>1. The geometric series centered at \(c = 0\):</p>
+    <p>
+      \[ \sum_{n=0}^{\infty} x^n = 1 + x + x^2 + x^3 + \cdots \quad \text{for}
+      \quad |x| < 1 \]
+    </p>
+
+    <p>2. The exponential function:</p>
+    <p>
+      \[ e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + \frac{x}{1!} +
+      \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \]
+    </p>
+
+    <p>3. The sine function:</p>
+    <p>
+      \[ \sin(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!} = x -
+      \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \]
+    </p>
+
+    <p>4. The cosine function:</p>
+    <p>
+      \[ \cos(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!} = 1 -
+      \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \]
+    </p>
+
+    <p>
+      Power series are a powerful tool in mathematical analysis, allowing
+      functions to be expressed in terms of simpler polynomial terms.
+    </p>
+  </body>
+</html>

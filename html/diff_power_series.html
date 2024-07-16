@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Differentiation of a Power Series</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Differentiation of a Power Series</h1>
+    <p>Consider a power series of the form:</p>
+    <p>\[ f(x) = \sum_{n=0}^{\infty} a_n x^n \]</p>
+    <p>
+      We want to find the derivative of this power series with respect to \(x\).
+    </p>
+    <h2>Step-by-Step Differentiation</h2>
+    <p>To differentiate \( f(x) \), we differentiate term by term:</p>
+    <p>\[ f'(x) = \frac{d}{dx} \left( \sum_{n=0}^{\infty} a_n x^n \right) \]</p>
+    <p>
+      Using the linearity of differentiation and the power rule \(\frac{d}{dx}
+      x^n = n x^{n-1}\), we get:
+    </p>
+    <p>
+      \[ f'(x) = \sum_{n=0}^{\infty} \frac{d}{dx} (a_n x^n) =
+      \sum_{n=0}^{\infty} a_n \frac{d}{dx} (x^n) \]
+    </p>
+    <p>Applying the power rule to each term:</p>
+    <p>\[ f'(x) = \sum_{n=0}^{\infty} a_n n x^{n-1} \]</p>
+    <p>
+      We can reindex the summation by letting \(m = n - 1\). When \(n = 0\), the
+      term vanishes because \(n x^{n-1}\) for \(n = 0\) is zero. Thus, we start
+      the summation from \(n = 1\) and let \(m = n - 1\):
+    </p>
+    <p>
+      \[ f'(x) = \sum_{n=1}^{\infty} a_n n x^{n-1} = \sum_{m=0}^{\infty} a_{m+1}
+      (m+1) x^m \]
+    </p>
+    <p>Therefore, the derivative of the power series is:</p>
+    <p>\[ f'(x) = \sum_{m=0}^{\infty} a_{m+1} (m+1) x^m \]</p>
+    <h2>Proof of Validity</h2>
+    <p>
+      The term-by-term differentiation of a power series is valid within the
+      radius of convergence of the original series. Suppose the power series:
+    </p>
+    <p>\[ f(x) = \sum_{n=0}^{\infty} a_n x^n \]</p>
+    <p>
+      has a radius of convergence \(R\). Within this radius, the series
+      converges uniformly. Differentiation of uniformly convergent series can be
+      performed term-by-term.
+    </p>
+    <p>Thus, within the interval \(|x| < R\), we have:</p>
+    <p>
+      \[ f'(x) = \sum_{n=1}^{\infty} a_n n x^{n-1} = \sum_{m=0}^{\infty} a_{m+1}
+      (m+1) x^m \]
+    </p>
+    <p>This completes the proof.</p>
+  </body>
+</html>

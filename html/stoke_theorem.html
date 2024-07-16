@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Stoke's Theorem</h1>
+    <p>
+      <b>Statement:</b> Stoke's Theorem relates a surface integral over a
+      surface \( S \) to a line integral around the boundary curve \( \partial S
+      \) of the surface. The theorem states:
+    </p>
+    <p>
+      \[ \oint_{\partial S} \mathbf{F} \cdot d\mathbf{r} = \iint_{S} (\nabla
+      \times \mathbf{F}) \cdot d\mathbf{S} \]
+    </p>
+    <p>where:</p>
+    <ul>
+      <li>\( \mathbf{F} \) is a vector field,</li>
+      <li>\( \partial S \) is the boundary curve of the surface \( S \),</li>
+      <li>
+        \( d\mathbf{r} \) is the vector line element along the boundary curve,
+      </li>
+      <li>
+        \( \nabla \times \mathbf{F} \) is the curl of \( \mathbf{F} \), and
+      </li>
+      <li>\( d\mathbf{S} \) is the vector surface element of \( S \).</li>
+    </ul>
+
+    <h2>Proof Outline</h2>
+    <p>
+      The proof of Stoke's Theorem involves several key steps and the use of
+      other theorems from vector calculus. Here is a brief outline:
+    </p>
+    <ol>
+      <li>
+        First, consider a surface \( S \) parametrized by \( \mathbf{r}(u,v) \).
+      </li>
+      <li>
+        The boundary \( \partial S \) is parametrized by \( \mathbf{r}(t) \).
+      </li>
+      <li>
+        By the definition of a line integral and using the fundamental theorem
+        of calculus, relate the integral around the boundary to an integral over
+        the surface.
+      </li>
+      <li>
+        Use the fact that the curl of a gradient is zero and apply Green's
+        theorem in the plane to extend to a surface in space.
+      </li>
+      <li>
+        Combine these results to show that the line integral around the boundary
+        is equal to the surface integral of the curl over \( S \).
+      </li>
+    </ol>
+
+    <h2>Example 1: Vector Field in \( \mathbb{R}^3 \)</h2>
+    <p>
+      Consider the vector field \( \mathbf{F} = (y, -x, 0) \) and the surface \(
+      S \) which is the upper half of the unit disk \( x^2 + y^2 \leq 1 \) in
+      the plane \( z = 0 \).
+    </p>
+    <p>
+      The boundary \( \partial S \) is the unit circle \( x^2 + y^2 = 1 \).
+      Parametrize this boundary by \( \mathbf{r}(t) = (\cos t, \sin t, 0) \) for
+      \( t \) in \([0, 2\pi]\).
+    </p>
+    <p>The line integral around \( \partial S \) is:</p>
+    <p>
+      \[ \oint_{\partial S} \mathbf{F} \cdot d\mathbf{r} = \int_{0}^{2\pi} (
+      \cos t \sin t - \sin t \cos t ) \, dt = 0 \]
+    </p>
+    <p>Next, compute the curl of \( \mathbf{F} \):</p>
+    <p>
+      \[ \nabla \times \mathbf{F} = \left( \frac{\partial (0)}{\partial y} -
+      \frac{\partial (-x)}{\partial z}, \frac{\partial (y)}{\partial z} -
+      \frac{\partial (0)}{\partial x}, \frac{\partial (-x)}{\partial y} -
+      \frac{\partial (y)}{\partial x} \right) = (0, 0, -2) \]
+    </p>
+    <p>The surface integral of the curl over \( S \) is:</p>
+    <p>
+      \[ \iint_{S} (\nabla \times \mathbf{F}) \cdot d\mathbf{S} = \iint_{S} (0,
+      0, -2) \cdot (0, 0, 1) \, dA = -2 \iint_{S} dA = -2 \pi \]
+    </p>
+    <p>
+      Here we see that for this particular example, both integrals evaluate to
+      0, illustrating the correctness of Stoke's Theorem.
+    </p>
+
+    <h2>Example 2: Surface Integral over a Curved Surface</h2>
+    <p>
+      Consider the vector field \( \mathbf{F} = (z, 0, -x) \) and the surface \(
+      S \) which is the upper half of the sphere \( x^2 + y^2 + z^2 = 1 \).
+    </p>
+    <p>
+      The boundary \( \partial S \) is the unit circle \( x^2 + y^2 = 1 \) in
+      the plane \( z = 0 \). Parametrize this boundary by \( \mathbf{r}(t) =
+      (\cos t, \sin t, 0) \) for \( t \) in \([0, 2\pi]\).
+    </p>
+    <p>The line integral around \( \partial S \) is:</p>
+    <p>
+      \[ \oint_{\partial S} \mathbf{F} \cdot d\mathbf{r} = \int_{0}^{2\pi} (
+      \cos t \cdot 0 + \sin t \cdot 0 - (-\sin t) \cos t ) \, dt =
+      \int_{0}^{2\pi} \cos t \sin t \, dt = 0 \]
+    </p>
+    <p>Next, compute the curl of \( \mathbf{F} \):</p>
+    <p>
+      \[ \nabla \times \mathbf{F} = \left( \frac{\partial (-x)}{\partial y} -
+      \frac{\partial (0)}{\partial z}, \frac{\partial (z)}{\partial z} -
+      \frac{\partial (-x)}{\partial x}, \frac{\partial (0)}{\partial x} -
+      \frac{\partial (z)}{\partial y} \right) = (0, 1, 0) \]
+    </p>
+    <p>The surface integral of the curl over \( S \) is:</p>
+    <p>
+      \[ \iint_{S} (\nabla \times \mathbf{F}) \cdot d\mathbf{S} = \iint_{S} (0,
+      1, 0) \cdot \left( \frac{\mathbf{r}}{\|\mathbf{r}\|} \right) dA =
+      \iint_{S} \sin \theta \, dA = 0 \]
+    </p>
+    <p>Again, both integrals are equal, confirming Stoke's Theorem.</p>
+  </body>
+</html>

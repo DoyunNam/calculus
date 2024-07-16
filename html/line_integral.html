@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Line Integral -->
+    <div>
+      <h1>Line Integral</h1>
+      <p>
+        A line integral (also known as a path integral) is an integral where the
+        function to be integrated is evaluated along a curve. The curve is
+        defined by a parametrization, and the integral sums up the function
+        values along this curve. There are two main types of line integrals:
+      </p>
+      <ul>
+        <li>
+          <strong>Scalar Line Integrals</strong>: Integrate a scalar function
+          along a curve.
+        </li>
+        <li>
+          <strong>Vector Line Integrals</strong>: Integrate a vector field along
+          a curve.
+        </li>
+      </ul>
+
+      <h2>Scalar Line Integral</h2>
+      <p>
+        The scalar line integral of a function \( f \) over a curve \( C \)
+        parametrized by \( \mathbf{r}(t) \) from \( t = a \) to \( t = b \) is
+        given by:
+      </p>
+      <p>
+        \[ \int_C f(\mathbf{r}) \, ds = \int_a^b f(\mathbf{r}(t))
+        \|\mathbf{r}'(t)\| \, dt \]
+      </p>
+
+      <h2>Vector Line Integral</h2>
+      <p>
+        The vector line integral of a vector field \( \mathbf{F} \) along a
+        curve \( C \) is given by:
+      </p>
+      <p>
+        \[ \int_C \mathbf{F} \cdot d\mathbf{r} = \int_a^b
+        \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt \]
+      </p>
+
+      <h2>Examples</h2>
+      <h3>Example 1: Scalar Line Integral</h3>
+      <p>
+        Consider the function \( f(x, y) = x^2 + y^2 \) and the curve \( C \)
+        which is the unit circle \( x^2 + y^2 = 1 \) parametrized by \(
+        \mathbf{r}(t) = (\cos t, \sin t) \) for \( t \) in \([0, 2\pi]\). The
+        scalar line integral is:
+      </p>
+      <p>
+        \[ \int_C (x^2 + y^2) \, ds = \int_0^{2\pi} (\cos^2 t + \sin^2 t)
+        \|\mathbf{r}'(t)\| \, dt = \int_0^{2\pi} 1 \cdot 1 \, dt = 2\pi \]
+      </p>
+
+      <h3>Example 2: Vector Line Integral</h3>
+      <p>
+        Consider the vector field \( \mathbf{F}(x, y) = (y, -x) \) and the curve
+        \( C \) which is the unit circle \( x^2 + y^2 = 1 \) parametrized by \(
+        \mathbf{r}(t) = (\cos t, \sin t) \) for \( t \) in \([0, 2\pi]\). The
+        vector line integral is:
+      </p>
+      <p>
+        \[ \int_C \mathbf{F} \cdot d\mathbf{r} = \int_0^{2\pi} ( \sin t, -\cos
+        t) \cdot (-\sin t, \cos t) \, dt = \int_0^{2\pi} ( -\sin^2 t - \cos^2 t)
+        \, dt = \int_0^{2\pi} -1 \, dt = -2\pi \]
+      </p>
+    </div>
+
+    <!-- Physical Meaning of Line Integral -->
+    <div>
+      <h1>Physical Meaning of Line Integral</h1>
+      <p>
+        A line integral is a type of integral where a function is evaluated
+        along a curve. It generalizes the concept of integrating over an
+        interval to integrating over a curve or path in space. The physical
+        meaning of a line integral depends on the context and the function being
+        integrated.
+      </p>
+      <h2>Example 1: Work Done by a Force Field</h2>
+      <p>
+        In physics, one common use of line integrals is to calculate the work
+        done by a force field \( \mathbf{F} \) on a particle moving along a path
+        \( C \). The work \( W \) is given by the line integral:
+      </p>
+      <p>\[ W = \int_C \mathbf{F} \cdot d\mathbf{r} \]</p>
+      <p>
+        Here, \( \mathbf{F} \) is the force field, \( d\mathbf{r} \) is a
+        differential element of the path \( C \), and \( \mathbf{F} \cdot
+        d\mathbf{r} \) represents the dot product of the force vector and the
+        displacement vector. This integral sums up the work done by the force
+        along each infinitesimal segment of the path.
+      </p>
+      <h2>Example 2: Circulation of a Vector Field</h2>
+      <p>
+        Another application of line integrals is in fluid dynamics, where it is
+        used to compute the circulation of a vector field \( \mathbf{V} \)
+        around a closed curve \( C \). The circulation \( \Gamma \) is given by:
+      </p>
+      <p>\[ \Gamma = \oint_C \mathbf{V} \cdot d\mathbf{r} \]</p>
+      <p>
+        Here, \( \mathbf{V} \) is the velocity field of the fluid, and the
+        integral sums the dot product of the velocity and the path's tangent
+        vector around the closed curve, representing the total circulation
+        around the curve.
+      </p>
+      <h2>Example 3: Flux Across a Curve</h2>
+      <p>
+        Line integrals can also be used to calculate the flux of a vector field
+        \( \mathbf{F} \) across a curve \( C \). The flux \( \Phi \) is given
+        by:
+      </p>
+      <p>\[ \Phi = \int_C \mathbf{F} \cdot \mathbf{n} \, ds \]</p>
+      <p>
+        In this case, \( \mathbf{n} \) is the unit normal vector to the curve \(
+        C \), and \( ds \) is a differential element of the arc length. This
+        integral measures how much of the field \( \mathbf{F} \) passes through
+        the curve \( C \).
+      </p>
+      <p>
+        Line integrals are powerful tools in various fields of science and
+        engineering, providing a way to sum quantities along curves in space.
+      </p>
+    </div>
+  </body>
+</html>

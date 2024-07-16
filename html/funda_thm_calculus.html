@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fundamental Theorem of Calculus</h1>
+    <p>The Fundamental Theorem of Calculus consists of two parts:</p>
+
+    <h2>Part 1</h2>
+    <p>
+      If \( f \) is continuous on the interval \([a, b]\) and \( F \) is an
+      antiderivative of \( f \) on \([a, b]\), then
+    </p>
+    <p>\[ \int_a^b f(x) \, dx = F(b) - F(a). \]</p>
+
+    <h2>Part 2</h2>
+    <p>
+      If \( f \) is a continuous real-valued function defined on a closed
+      interval \([a, b]\), and
+    </p>
+    <p>\[ F(x) = \int_a^x f(t) \, dt, \]</p>
+    <p>
+      then \( F \) is continuous on \([a, b]\), differentiable on \((a, b)\),
+      and \( F'(x) = f(x) \) for all \( x \) in \((a, b)\).
+    </p>
+
+    <h2>Proof of Part 1</h2>
+    <p>
+      Let \( F \) be an antiderivative of \( f \), meaning \( F'(x) = f(x) \).
+      By the definition of the definite integral as the limit of Riemann sums,
+      we have
+    </p>
+    <p>
+      \[ \int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta
+      x, \]
+    </p>
+    <p>
+      where \(\Delta x = \frac{b-a}{n}\) and \( x_i^* \) is a sample point in
+      the \( i \)-th subinterval.
+    </p>
+    <p>
+      Using the Mean Value Theorem for integrals, there exists a point \( c_i \)
+      in the \( i \)-th subinterval such that
+    </p>
+    <p>\[ f(c_i) \Delta x = F(x_{i+1}) - F(x_i). \]</p>
+    <p>Summing over all subintervals, we get</p>
+    <p>
+      \[ \sum_{i=1}^n f(c_i) \Delta x = \sum_{i=1}^n [F(x_{i+1}) - F(x_i)] =
+      F(b) - F(a). \]
+    </p>
+    <p>Taking the limit as \( n \to \infty \), we have</p>
+    <p>\[ \int_a^b f(x) \, dx = F(b) - F(a). \]</p>
+
+    <h2>Proof of Part 2</h2>
+    <p>
+      Define \( F(x) = \int_a^x f(t) \, dt \). We need to show that \( F'(x) =
+      f(x) \).
+    </p>
+    <p>By the definition of the derivative,</p>
+    <p>\[ F'(x) = \lim_{h \to 0} \frac{F(x+h) - F(x)}{h}. \]</p>
+    <p>Using the definition of \( F(x) \), we have</p>
+    <p>
+      \[ F(x+h) = \int_a^{x+h} f(t) \, dt \quad \text{and} \quad F(x) = \int_a^x
+      f(t) \, dt. \]
+    </p>
+    <p>Therefore,</p>
+    <p>
+      \[ F(x+h) - F(x) = \int_a^{x+h} f(t) \, dt - \int_a^x f(t) \, dt =
+      \int_x^{x+h} f(t) \, dt. \]
+    </p>
+    <p>Hence,</p>
+    <p>\[ F'(x) = \lim_{h \to 0} \frac{1}{h} \int_x^{x+h} f(t) \, dt. \]</p>
+    <p>
+      By the Mean Value Theorem for integrals, there exists a point \( c \) in
+      \([x, x+h]\) such that
+    </p>
+    <p>\[ \int_x^{x+h} f(t) \, dt = f(c) \cdot h. \]</p>
+    <p>Thus,</p>
+    <p>
+      \[ F'(x) = \lim_{h \to 0} \frac{f(c) \cdot h}{h} = \lim_{h \to 0} f(c) =
+      f(x). \]
+    </p>
+    <p>This completes the proof of the Fundamental Theorem of Calculus.</p>
+  </body>
+</html>

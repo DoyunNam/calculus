@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Let \( \sum_{n=0}^{\infty} a_n z^n \) be a complex power series that is
+      absolutely convergent in the disk \( |z| < R \), where \( R \) is the
+      radius of convergence. To prove that the series is uniformly convergent on
+      any closed subdisk \( |z| \leq r < R \), we follow these steps:
+    </p>
+
+    <p>
+      1. <strong>Absolute Convergence Implies Bounded Terms:</strong> Since the
+      series \( \sum_{n=0}^{\infty} a_n z^n \) is absolutely convergent for \(
+      |z| < R \), for any \( z \) in the subdisk \( |z| \leq r \), we have: \[
+      \sum_{n=0}^{\infty} |a_n z^n| \leq \sum_{n=0}^{\infty} |a_n| r^n. \] Since
+      \( r < R \), the series \( \sum_{n=0}^{\infty} |a_n| r^n \) is convergent
+      and its sum is finite.
+    </p>
+
+    <p>
+      2. <strong>Uniform Convergence Criterion:</strong> For \(
+      \sum_{n=0}^{\infty} a_n z^n \) to be uniformly convergent on \( |z| \leq r
+      \), given any \( \epsilon > 0 \), there exists an \( N \) such that for
+      all \( n > N \) and for all \( z \) with \( |z| \leq r \), \[ \left|
+      \sum_{k=n}^{\infty} a_k z^k \right| < \epsilon. \] To prove this, note
+      that: \[ \left| \sum_{k=n}^{\infty} a_k z^k \right| \leq
+      \sum_{k=n}^{\infty} |a_k| |z|^k \leq \sum_{k=n}^{\infty} |a_k| r^k. \]
+      Since \( \sum_{k=0}^{\infty} |a_k| r^k \) is convergent, for any \(
+      \epsilon > 0 \), there exists an \( N \) such that: \[ \sum_{k=n}^{\infty}
+      |a_k| r^k < \epsilon \quad \text{for all} \quad n > N. \] Therefore, \[
+      \left| \sum_{k=n}^{\infty} a_k z^k \right| \leq \sum_{k=n}^{\infty} |a_k|
+      r^k < \epsilon \quad \text{for all} \quad n > N \quad \text{and} \quad |z|
+      \leq r. \]
+    </p>
+
+    <p>
+      3. <strong>Conclusion:</strong> The power series \( \sum_{n=0}^{\infty}
+      a_n z^n \) is uniformly convergent on any closed subdisk \( |z| \leq r < R
+      \). This follows from the fact that we can make the tail of the series as
+      small as desired, uniformly for all \( z \) in the subdisk.
+    </p>
+  </body>
+</html>

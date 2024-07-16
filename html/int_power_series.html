@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Integration of a Power Series</h2>
+    <p>Consider a power series of the form:</p>
+    <p>\[ f(x) = \sum_{n=0}^{\infty} a_n x^n \]</p>
+    <p>
+      We want to integrate this power series term-by-term. The integral of \(
+      f(x) \) from 0 to \( x \) is:
+    </p>
+    <p>
+      \[ \int_0^x f(t) \, dt = \int_0^x \sum_{n=0}^{\infty} a_n t^n \, dt \]
+    </p>
+    <p>
+      Assuming the power series converges uniformly, we can interchange the sum
+      and the integral:
+    </p>
+    <p>
+      \[ \int_0^x \sum_{n=0}^{\infty} a_n t^n \, dt = \sum_{n=0}^{\infty}
+      \int_0^x a_n t^n \, dt \]
+    </p>
+    <p>Integrating each term individually, we get:</p>
+    <p>
+      \[ \sum_{n=0}^{\infty} a_n \int_0^x t^n \, dt = \sum_{n=0}^{\infty} a_n
+      \left[ \frac{t^{n+1}}{n+1} \right]_0^x \]
+    </p>
+    <p>Evaluating the integral, we have:</p>
+    <p>
+      \[ \sum_{n=0}^{\infty} a_n \left( \frac{x^{n+1}}{n+1} \right) =
+      \sum_{n=0}^{\infty} \frac{a_n}{n+1} x^{n+1} \]
+    </p>
+    <p>Therefore, the integral of the power series \( f(x) \) is:</p>
+    <p>
+      \[ \int_0^x f(t) \, dt = \sum_{n=0}^{\infty} \frac{a_n}{n+1} x^{n+1} \]
+    </p>
+    <h2>Proof of Term-by-Term Integration</h2>
+    <p>
+      The key step in the integration process is the interchange of the sum and
+      the integral. We need to justify this step. This justification is usually
+      provided by the following theorem:
+    </p>
+    <p>
+      <strong>Theorem (Uniform Convergence):</strong> If a series of functions
+      \( \sum_{n=0}^{\infty} g_n(x) \) converges uniformly to a function \( g(x)
+      \) on an interval \( [a, b] \), and if each \( g_n(x) \) is integrable,
+      then
+    </p>
+    <p>
+      \[ \int_a^b \sum_{n=0}^{\infty} g_n(x) \, dx = \sum_{n=0}^{\infty}
+      \int_a^b g_n(x) \, dx \]
+    </p>
+    <p>
+      In our case, \( g_n(t) = a_n t^n \), which are continuous (and thus
+      integrable) on any closed interval \( [0, x] \). The power series \(
+      \sum_{n=0}^{\infty} a_n t^n \) converges uniformly on \( [0, x] \) if \(
+      |t| \leq R \) (where \( R \) is the radius of convergence). Therefore, we
+      can interchange the sum and the integral.
+    </p>
+    <p>
+      This completes the proof of term-by-term integration of the power series.
+    </p>
+  </body>
+</html>

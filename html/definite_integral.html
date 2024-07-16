@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      The definite integral of a one-variable function \( f(x) \) over an
+      interval \([a, b]\) is a fundamental concept in calculus that represents
+      the signed area under the curve \( f(x) \) from \( x = a \) to \( x = b
+      \). It is denoted as:
+    </p>
+    <p>\[ \int_{a}^{b} f(x) \, dx \]</p>
+    <p>
+      Mathematically, the definite integral is defined as the limit of a Riemann
+      sum as the number of subintervals approaches infinity. Specifically,
+    </p>
+    <p>
+      \[ \int_{a}^{b} f(x) \, dx = \lim_{{n \to \infty}} \sum_{i=1}^{n} f(x_i^*)
+      \Delta x \]
+    </p>
+    <p>
+      where \( \Delta x = \frac{b-a}{n} \) is the width of each subinterval, and
+      \( x_i^* \) is a sample point in the \( i \)-th subinterval.
+    </p>
+    <p>
+      The Fundamental Theorem of Calculus links the definite integral to the
+      antiderivative of the function. If \( F(x) \) is an antiderivative of \(
+      f(x) \), then:
+    </p>
+    <p>\[ \int_{a}^{b} f(x) \, dx = F(b) - F(a) \]</p>
+    <p>
+      This theorem provides a powerful method for evaluating definite integrals.
+    </p>
+  </body>
+</html>

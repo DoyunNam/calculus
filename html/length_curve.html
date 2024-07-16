@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <style>
+      body {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Length of a Parametrized Curve</h1>
+    <p>
+      The length \( L \) of a parametrized curve defined by \( \mathbf{r}(t) =
+      (x(t), y(t), z(t)) \) for \( t \) in the interval \([a, b]\) is given by
+      the integral:
+    </p>
+    <p>
+      \[ L = \int_{a}^{b} \sqrt{\left( \frac{dx}{dt} \right)^2 + \left(
+      \frac{dy}{dt} \right)^2 + \left( \frac{dz}{dt} \right)^2} \, dt \]
+    </p>
+    <h2>Examples</h2>
+    <h3>Example 1: Line Segment</h3>
+    <p>
+      Consider a line segment from \((0, 0)\) to \((1, 1)\) parametrized by \(
+      \mathbf{r}(t) = (t, t) \) for \( t \) in \([0, 1]\).
+    </p>
+    <p>
+      Here, \(\frac{dx}{dt} = 1\) and \(\frac{dy}{dt} = 1\). The length \( L \)
+      is:
+    </p>
+    <p>
+      \[ L = \int_{0}^{1} \sqrt{1^2 + 1^2} \, dt = \int_{0}^{1} \sqrt{2} \, dt =
+      \sqrt{2} \cdot (1 - 0) = \sqrt{2} \]
+    </p>
+    <h3>Example 2: Circle</h3>
+    <p>
+      Consider a circle of radius \( r \) parametrized by \( \mathbf{r}(t) = (r
+      \cos t, r \sin t) \) for \( t \) in \([0, 2\pi]\).
+    </p>
+    <p>
+      Here, \(\frac{dx}{dt} = -r \sin t\) and \(\frac{dy}{dt} = r \cos t\). The
+      length \( L \) is:
+    </p>
+    <p>
+      \[ L = \int_{0}^{2\pi} \sqrt{(-r \sin t)^2 + (r \cos t)^2} \, dt =
+      \int_{0}^{2\pi} \sqrt{r^2 (\sin^2 t + \cos^2 t)} \, dt = \int_{0}^{2\pi} r
+      \, dt = r \cdot 2\pi = 2\pi r \]
+    </p>
+    <h3>Example 3: Helix</h3>
+    <p>
+      Consider a helix parametrized by \( \mathbf{r}(t) = (a \cos t, a \sin t,
+      bt) \) for \( t \) in \([0, 2\pi]\).
+    </p>
+    <p>
+      Here, \(\frac{dx}{dt} = -a \sin t\), \(\frac{dy}{dt} = a \cos t\), and
+      \(\frac{dz}{dt} = b\). The length \( L \) is:
+    </p>
+    <p>
+      \[ L = \int_{0}^{2\pi} \sqrt{(-a \sin t)^2 + (a \cos t)^2 + b^2} \, dt =
+      \int_{0}^{2\pi} \sqrt{a^2 (\sin^2 t + \cos^2 t) + b^2} \, dt =
+      \int_{0}^{2\pi} \sqrt{a^2 + b^2} \, dt = \sqrt{a^2 + b^2} \cdot 2\pi \]
+    </p>
+  </body>
+</html>
